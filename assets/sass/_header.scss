@@ -1,0 +1,25 @@
+.header {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+
+    &__inner {
+        @include flex(center, space-between);
+        padding: 3.8rem 0;
+        border-bottom: 1px solid $boder-color;
+        transition: padding .3s ease;
+    }
+
+    &--fixed {
+        position: fixed;
+        background-color: $black-dark-color;
+        z-index: 99;
+
+        .header__inner {
+            padding: 2.5rem 0;
+            border-bottom: 0;
+        }
+    }
+}

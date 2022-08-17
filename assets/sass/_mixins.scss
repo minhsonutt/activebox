@@ -1,0 +1,25 @@
+@mixin flex($alignItem,$justifyContent,$direction: row) {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: $direction;
+    align-items: $alignItem;
+    justify-content: $justifyContent;
+}
+
+@mixin position($left, $top, $both) {
+    position: absolute;
+
+}
+
+@mixin tablet {
+    @media screen and (max-width: $tablet-width){
+        @content()
+    }
+}
+
+
+@mixin mobile {
+    @media screen and (max-width: $mobile-width){
+        @content()
+    }
+}

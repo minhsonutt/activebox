@@ -1,0 +1,56 @@
+.features {
+    margin-top: 12rem;
+    &__list {
+        @include flex(center,space-between)
+    }
+    &__item {
+        width: calc(33.33% - 282px/3);
+        text-align: center;
+        margin-bottom: 7.5rem;
+    }
+    &__icon {
+        background: url(../images/icon/sp_icon.png) no-repeat;
+        width: 6.8rem;
+        height: 6.3rem;
+        margin: 0 auto;
+        &--penceil {
+            background-position: -41px -63px;
+        }
+        &--screen {
+            width: 7.8rem;
+            background-position: -157px 1px;
+        }
+        &--light {
+            width: 4.8rem;
+            background-position: 3px -63px;
+        }
+        &--react {
+            width: 5.8rem;
+            background-position: -108px -63px;
+        }
+        &--bag {
+            width: 7.8rem;
+            background-position: -80px 1px;
+        }
+        &--download {
+            width: 8rem;
+            background-position: 0px 1px;
+        }
+    }
+    &__title {
+        font-size: 1.4rem;
+        color: $black-color;
+        text-transform: uppercase;
+        margin: 3.4rem 0 2.6rem;
+        overflow: hidden;
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 1;
+        text-overflow: ellipsis;
+    }
+    &__desc {
+        font-size: 1.4rem;
+        color: $text-color;
+        line-height: 2.2rem;
+    }
+}

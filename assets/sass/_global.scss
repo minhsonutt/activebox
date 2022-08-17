@@ -1,0 +1,66 @@
+*,
+::before,
+::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+
+body {
+    font-family: $primary-font;
+    font-size: 1.6rem;
+    color: $text-color;
+    font-weight: 400;
+}
+
+.container {
+    max-width: 1200px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+ul,
+li {
+    list-style: none;
+}
+
+a,
+a:hover {
+    text-decoration: none;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+button {
+    border: none;
+    outline: none;
+}
+
+button:focus {
+    border: none;
+    outline: none;
+}
+
+.btn {
+    padding: 15px 40px;
+    font-family: $primary-font;
+    text-transform: uppercase;
+    font-size: 1.3rem;
+    font-weight: 600;
+    border-radius: 2px;
+    color: $white-color;
+    cursor: pointer;
+}
+
+.btn.btn--primary {
+    background-color: $primary-color;
+}
