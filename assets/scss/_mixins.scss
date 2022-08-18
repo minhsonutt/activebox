@@ -8,8 +8,14 @@
 
 @mixin position($left, $top, $both) {
     position: absolute;
-
 }
+
+@mixin pc {
+    @media screen and (max-width: $pc-width){
+        @content()
+    }
+}
+
 
 @mixin tablet {
     @media screen and (max-width: $tablet-width){

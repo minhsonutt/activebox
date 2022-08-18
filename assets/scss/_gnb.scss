@@ -19,5 +19,8 @@
         &:hover {
             color: $white-color;
         }
+        &.active {
+            color: $primary-color;
+        }
     }
 }

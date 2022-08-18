@@ -17,6 +17,9 @@
         text-align: center;
         transform: translateX(-50%);
         width: 50%;
+        @include pc() {
+            width: 60%;
+        }
     }
 
     &__title {
@@ -25,6 +28,9 @@
         font-size: 6.5rem;
         font-weight: bold;
         line-height: 7.1rem;
+        @include pc() {
+            font-size: 5.5rem;
+        }
     }
 
     &__subtitle {
@@ -35,5 +41,8 @@
         width: 95%;
         margin: 4.4rem auto 8.1rem;
         line-height: 3.3rem;
+        @include pc() {
+            margin: 1.4rem auto 3.1rem;
+        }
     }
 }

@@ -66,18 +66,16 @@
         .swiper-wrapper {
             padding-bottom: 7rem;
         }
-
         .swiper-pagination {
             .swiper-pagination-bullet {
-                width: 1.5rem;
+                width: .9rem;
                 border-radius: 1rem;
                 background: $primary-color;
-                height: .6rem;
+                height: .9rem;
                 transition: width .25s ease-in-out;
             }
-
             .swiper-pagination-bullet-active {
-                width: 5.5rem;
+                width: 3.5rem;
             }
         }
     }

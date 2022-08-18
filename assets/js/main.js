@@ -4,15 +4,18 @@
         scrollTrigger.init();
         testimonialsSlide.init();
         ourTeamSlide.init();
-
         scrollSpy.init();
+        backToTop.init();
+        activeMenuLink.init()
     })
 
     //global variables
     const header = document.querySelector('.header');
     const galleryItems = document.querySelectorAll('.works__item');
-    const screenPosition = window.innerHeight / 1.2;
+    const screenPosition = window.innerHeight;
     const links = document.querySelectorAll('.gnb__link');
+    const backToTopBtn = document.querySelector('.backtotop')
+
     const fixedNavigation = {
         init() {
             this.fixedNavigation();
@@ -69,21 +72,6 @@
                     nextEl: ".swiper-button-next",
                     prevEl: ".swiper-button-prev",
                 },
-
-                320: {
-                    slidesPerView: 2,
-                    spaceBetween: 20
-                },
-
-                480: {
-                    slidesPerView: 3,
-                    spaceBetween: 30
-                },
-
-                640: {
-                    slidesPerView: 4,
-                    spaceBetween: 40
-                }
             })
         }
     }
@@ -132,5 +120,66 @@
                })
             })
         },
+    }
+
+
+    const activeMenuLink = {
+        init() {
+            this.activeMenuLink();
+        },
+        activeMenuLink() {
+            window.addEventListener('scroll', () => {
+                const sectionList = ['features', 'works', 'ourteam', 'testimonials', 'download'];
+                sectionList.forEach(section => {
+                    const currentSection = document.querySelector(`#${section}`)
+
+                    currentSectionPosition = currentSection.getBoundingClientRect().top
+
+                    const linkActive = document.querySelector(`[data-link=${section}]`);
+                    if(currentSection) {
+                        console.log(screenPosition);
+                        if(currentSectionPosition < screenPosition - 600) {
+                            links.forEach(link => {
+                                link.classList.remove('active')
+                            })
+                            linkActive.classList.add('active')
+                        }
+                    }
+                    if(window.pageYOffset == 0)  {
+                        links.forEach(link => {
+                            link.classList.remove('active')
+                        })
+                    }
+                })
+            })
+        },
+    }
+
+
+    const backToTop = {
+        init() {
+            this.backToTop();
+        },
+        backToTop() {
+            window.addEventListener('scroll', this.handleScrollDisplayBackToTop)
+            backToTopBtn.addEventListener('click', this.handleCickBackToTop)
+        },
+        handleCickBackToTop() {
+            if(backToTop) {
+                window.scrollTo({
+                    top: 0,
+                    behavior: "smooth"
+                });
+            }
+        },
+        handleScrollDisplayBackToTop() {
+            if(backToTop) {
+                if(document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
+                    backToTopBtn.classList.add('active')
+                }else {
+                    backToTopBtn.classList.remove('active')
+                }
+           }
+        }
     }
 })()
