@@ -4,45 +4,53 @@
     background-size: cover;
     min-height: 750px;
     width: 100%;
+    @include flex (center, center);
 
     &__title {
         font-family: $secondary-font;
+        font-size: 6.5rem;
+        font-weight: bold;
         font-weight: 700;
+        line-height: 7.1rem;
+        color: $white-color;
+        text-transform: uppercase;
+        @include pc() {
+            font-size: 4rem;
+            line-height: 1.2;
+        }
+        @include mobile() {
+            font-size: 3.2rem;
+            line-height: 1.2;
+        }
     }
 
     &__txt {
-        position: absolute;
-        top: 25%;
-        left: 50%;
-        text-align: center;
-        transform: translateX(-50%);
-        width: 50%;
+        width: 80%;
+        margin: 0 auto;
+        margin-top: 9rem;
         @include pc() {
-            width: 60%;
+            margin-top: 4rem;
         }
+        @include mobile() {
+            width: 95%;
+        }
+
     }
 
-    &__title {
-        color: $white-color;
-        text-transform: uppercase;
-        font-size: 6.5rem;
-        font-weight: bold;
-        line-height: 7.1rem;
-        @include pc() {
-            font-size: 5.5rem;
-        }
-    }
 
     &__subtitle {
         font-family: $primary-font;
         font-size: 2.2rem;
         color: $white-color;
         font-weight: 300;
-        width: 95%;
-        margin: 4.4rem auto 8.1rem;
+        width: 98%;
+        margin: 2.4rem auto 7.3rem;
         line-height: 3.3rem;
-        @include pc() {
-            margin: 1.4rem auto 3.1rem;
+        font-weight: 400;
+        @include mobile() {
+            font-size: 1.8rem;
+            line-height: 1.5;
+            margin: 2.4rem auto 5.3rem;
         }
     }
 }

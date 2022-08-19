@@ -6,16 +6,18 @@
         ourTeamSlide.init();
         scrollSpy.init();
         backToTop.init();
-        activeMenuLink.init()
+        activeMenuLink.init();
+        toggleMenu.init();
     })
 
     //global variables
     const header = document.querySelector('.header');
     const galleryItems = document.querySelectorAll('.works__item');
-    const screenPosition = window.innerHeight;
+    const navigation = document.querySelector('.gnb')
     const links = document.querySelectorAll('.gnb__link');
     const backToTopBtn = document.querySelector('.backtotop')
-
+    const menuBtn = document.querySelector('.toggle-menu')
+    const screenPosition = window.innerHeight;
     const fixedNavigation = {
         init() {
             this.fixedNavigation();
@@ -68,6 +70,23 @@
                     el: ".swiper-pagination",
                     clickable: true,
                 },
+                breakpoints: {
+                    // when window width is >= 320px
+                    320: {
+                        slidesPerView: 1,
+
+                    },
+
+                    1024: {
+                        slidesPerView: 2,
+
+                    },
+
+                    1025: {
+                        slidesPerView: 4,
+
+                    }
+                },
                 navigation: {
                     nextEl: ".swiper-button-next",
                     prevEl: ".swiper-button-prev",
@@ -105,11 +124,11 @@
         },
         scrollSpy() {
             links.forEach(item => {
-               item.addEventListener('click', (e) => {
+                item.addEventListener('click', (e) => {
                     e.preventDefault()
                     const id = item.dataset.link;
                     const section = document.querySelector(`#${id}`);
-                    if(section) {
+                    if (section) {
                         const headerHeight = header.offsetHeight;
                         const sectionPosition = section.offsetTop - headerHeight;
                         window.scrollTo({
@@ -117,7 +136,7 @@
                             behavior: "smooth"
                         });
                     }
-               })
+                })
             })
         },
     }
@@ -136,16 +155,15 @@
                     currentSectionPosition = currentSection.getBoundingClientRect().top
 
                     const linkActive = document.querySelector(`[data-link=${section}]`);
-                    if(currentSection) {
-                        console.log(screenPosition);
-                        if(currentSectionPosition < screenPosition - 600) {
+                    if (currentSection) {
+                        if (currentSectionPosition < screenPosition - 600) {
                             links.forEach(link => {
                                 link.classList.remove('active')
                             })
                             linkActive.classList.add('active')
                         }
                     }
-                    if(window.pageYOffset == 0)  {
+                    if (window.pageYOffset === 0) {
                         links.forEach(link => {
                             link.classList.remove('active')
                         })
@@ -156,6 +174,34 @@
     }
 
 
+    const toggleMenu = {
+        init() {
+            this.toggleMenu()
+        },
+        toggleMenu() {
+            if(menuBtn) {
+                menuBtn.addEventListener('click', this.handleClickToggleMenu)
+            }
+        },
+        handleClickToggleMenu() {
+
+            if(navigation.classList.contains('active')) {
+                navigation.classList.remove('active')
+                document.body.style.overflowY = 'auto'
+            }
+            else {
+                navigation.classList.add('active')
+                document.body.style.overflowY = 'hidden'
+            }
+
+            if(menuBtn.classList.contains('active')) {
+                menuBtn.classList.remove('active')
+            }else {
+                menuBtn.classList.add('active')
+            }
+        }
+    }
+
     const backToTop = {
         init() {
             this.backToTop();
@@ -165,7 +211,7 @@
             backToTopBtn.addEventListener('click', this.handleCickBackToTop)
         },
         handleCickBackToTop() {
-            if(backToTop) {
+            if (backToTop) {
                 window.scrollTo({
                     top: 0,
                     behavior: "smooth"
@@ -173,13 +219,13 @@
             }
         },
         handleScrollDisplayBackToTop() {
-            if(backToTop) {
-                if(document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
+            if (backToTop) {
+                if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
                     backToTopBtn.classList.add('active')
-                }else {
+                } else {
                     backToTopBtn.classList.remove('active')
                 }
-           }
+            }
         }
     }
 })()

@@ -9,7 +9,7 @@
         @include flex(center, space-between);
         padding: 3.8rem 0;
         border-bottom: 1px solid $boder-color;
-        transition: padding .3s ease;
+        transition: padding .3s;
     }
 
     &--fixed {

@@ -8,6 +8,9 @@
     }
     &__thumnail {
         width: 50%;
+        @include tablet() {
+            width: 100%;
+        }
     }
     &__img {
         height: 100%;
@@ -16,16 +19,25 @@
     }
     &__content {
         width: 50%;
+        @include tablet() {
+            width: 100%;
+        }
         background-color: $violet-color;
-        padding: 10rem;
-
+        padding: 10rem 10rem 0 10rem;
+        height: 500px;
+        @include mobile() {
+            padding: 2rem;
+            height: auto;
+        }
     }
     &__txt {
         font-family: $third-font;
         color: $white-color;
         font-size: 3.6rem;
         line-height: 4.2rem;
-        max-width: 500px;
+        @include mobile() {
+            font-size: 2.5rem;
+        } 
         font-style: italic;
     }
     &__info {
@@ -35,12 +47,12 @@
         color: $white-color;
         font-weight: 700;
         margin-top: 3rem;
+        @include mobile() {
+            font-size: 1rem;
+        } 
     }
 
     .swiper {
-        .swiper-wrapper {
-
-        }
         .swiper-pagination {
             bottom: 127px;
             left: 270px;

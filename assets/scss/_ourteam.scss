@@ -1,20 +1,25 @@
 .ourteam {
     margin-top: 10rem;
     margin-bottom: 20rem;
-
-    &__content {
-        margin-top: 3rem;
-        margin-bottom: 5rem;
+    &__item {
+        @include tablet() {
+            text-align: center;
+        }
     }
-
+    &__avata {
+        @include tablet() {
+            margin: 0 auto;
+        }
+    }
     &__name {
+        margin: 2.6rem 0 0.8rem;
         font-size: 2.2rem;
         font-weight: 400;
         color: $black-color;
     }
 
     &__position {
-        margin: 1.3rem 0 2.8rem;
+       margin-bottom: 2.2rem;
         font-size: 1.3rem;
         font-weight: 400;
         color: $primary-color;
@@ -25,10 +30,14 @@
         font-size: 1.4rem;
         color: $text-color;
         line-height: 2.1rem;
+        margin-bottom: 2.5rem
     }
 
     &__socials-list {
         @include flex(center, flex-start);
+        @include tablet() {
+            @include flex(center,center)
+        }
     }
 
     &__socials-item {
@@ -68,14 +77,14 @@
         }
         .swiper-pagination {
             .swiper-pagination-bullet {
-                width: .9rem;
+                width: 2rem;
                 border-radius: 1rem;
                 background: $primary-color;
-                height: .9rem;
+                height: .7rem;
                 transition: width .25s ease-in-out;
             }
             .swiper-pagination-bullet-active {
-                width: 3.5rem;
+                width: 4rem;
             }
         }
     }

@@ -13,9 +13,15 @@
     opacity: 0;
     visibility: hidden;
     cursor: pointer;
-    transition: opacity .25s ease;
+    transition: all .25s ease;
+    transform: translateY(50%);
+    @include mobile() {
+        bottom: 20px;
+        right: 20px;
+    }
     &.active {
         opacity: 1;
         visibility: visible;
+        transform: translateY(0);
     }
 }

@@ -1,10 +1,35 @@
-.gnb {
+    .gnb {
+        @include tablet() {
+            &.active {
+                .gnb__list {
+                    opacity: 1;
+                    visibility: visible;
+                }
+            }
+        }
     &__list {
-        @include flex(center, center)
+        @include flex(center, center);
+        @include tablet() {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100vh;
+            background-color: $menu-bg;
+            flex-direction: column;
+            z-index: 98;
+            transition: all .3s ease;
+            opacity: 0;
+            visibility: hidden;
+        }
     }
     &__item {
         &:not(:last-child) {
             margin-right: 5.9rem;
+            @include tablet() {
+                margin-right: 0;
+                margin-bottom: 4rem;
+            }
         }
     }
     &__link  {
@@ -16,6 +41,9 @@
         text-transform: uppercase;
         color: $light-white-color;
         transition: color .25s ease;
+        @include tablet() {
+            font-size: 2rem;
+        }
         &:hover {
             color: $white-color;
         }

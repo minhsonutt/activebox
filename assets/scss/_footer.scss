@@ -6,6 +6,10 @@
     }
     &__item {
         width: 33.33%;
+        @include tablet() {
+            width: 100%;
+            margin-bottom: 5rem;
+        }
     }
     &__title {
         margin-bottom: 2.3rem;
@@ -32,6 +36,7 @@
         border: 2px solid $white-color;
         border-radius: 3px;
         cursor: pointer;
+        
     }
     &__socials-icon {
         display: inline-block;
