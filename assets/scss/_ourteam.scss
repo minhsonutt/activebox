@@ -1,6 +1,9 @@
 .ourteam {
     margin-top: 10rem;
     margin-bottom: 20rem;
+    @include mobile() {
+        margin-bottom: 5rem;
+    }
     &__item {
         @include tablet() {
             text-align: center;
