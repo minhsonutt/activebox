@@ -312,7 +312,7 @@ button:focus {
     width: calc(50% - 47px);
   }
 }
-@media screen and (max-width: 1024px) {
+@media screen and (max-width: 600px) {
   .features__item {
     width: 100%;
   }

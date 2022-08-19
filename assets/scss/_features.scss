@@ -11,7 +11,7 @@
         @include tablet() {
             width: calc(50% - 94px/2);
         }
-        @include tablet() {
+        @include mobile() {
             width: 100%;
         }
     }
