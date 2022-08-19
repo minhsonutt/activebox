@@ -6,6 +6,14 @@
     box-sizing: border-box;
 }
 
+::before,
+::after {
+    content: '';
+    position: absolute;
+    background: transparent;
+    z-index: 2;
+}
+
 html {
     font-size: 62.5%;
    @include tablet() {

@@ -10,6 +10,14 @@
   box-sizing: border-box;
 }
 
+::before,
+::after {
+  content: "";
+  position: absolute;
+  background: transparent;
+  z-index: 2;
+}
+
 html {
   font-size: 62.5%;
 }
@@ -147,6 +155,10 @@ button:focus {
   transform: translateX(-50%);
   width: 100%;
 }
+.header__logo {
+  position: relative;
+  z-index: 99;
+}
 .header__inner {
   display: flex;
   flex-wrap: wrap;
@@ -187,7 +199,7 @@ button:focus {
     top: 0;
     width: 100%;
     height: 100vh;
-    background-color: rgba(0, 0, 0, 0.8);
+    background-color: #2a2d48;
     flex-direction: column;
     z-index: 98;
     transition: all 0.3s ease;
@@ -460,7 +472,7 @@ button:focus {
   }
 }
 @media screen and (max-width: 1024px) {
-  .ourteam__avata {
+  .ourteam__avatar {
     margin: 0 auto;
   }
 }
@@ -500,6 +512,7 @@ button:focus {
   }
 }
 .ourteam__socials-item {
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -509,12 +522,44 @@ button:focus {
   border: 1px solid #e8ecee;
   cursor: pointer;
 }
+.ourteam__socials-item.ourteam__socials-item--btn::before, .ourteam__socials-item.ourteam__socials-item--btn::after {
+  width: 0%;
+  height: 0%;
+  opacity: 0;
+  transition: width 0.2s 0.15s linear, height 0.15s linear, opacity 0s 0.35s;
+}
+.ourteam__socials-item.ourteam__socials-item--btn::before {
+  top: 0;
+  right: 0;
+  border-top: 2px solid #e84545;
+  border-left: 2px solid #e84545;
+}
+.ourteam__socials-item.ourteam__socials-item--btn::after {
+  bottom: 0;
+  left: 0;
+  border-bottom: 2px solid #e84545;
+  border-right: 2px solid #e84545;
+}
+.ourteam__socials-item.ourteam__socials-item--btn:hover::before, .ourteam__socials-item.ourteam__socials-item--btn:hover::after {
+  width: 100%;
+  height: 99%;
+  opacity: 1;
+  transition: width 0.2s linear, height 0.15s 0.2s linear, opacity 0s;
+}
 .ourteam__socials-icon {
   background: url(../images/icon/sp_icon.png) no-repeat;
   width: 2rem;
   height: 2rem;
   padding: 1rem;
   display: inline-block;
+}
+.ourteam__socials-icon::before, .ourteam__socials-icon::after {
+  content: "";
+  width: 2px;
+  height: 0;
+  position: absolute;
+  transition: all 0.2s linear;
+  background: #fff;
 }
 .ourteam__socials-icon--facebook {
   background-position: 7px -127px;
