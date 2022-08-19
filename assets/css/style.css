@@ -521,6 +521,10 @@ button:focus {
   margin-right: 5px;
   border: 1px solid #e8ecee;
   cursor: pointer;
+  transition: border 0.25s ease;
+}
+.ourteam__socials-item:hover {
+  border-color: transparent;
 }
 .ourteam__socials-item.ourteam__socials-item--btn::before, .ourteam__socials-item.ourteam__socials-item--btn::after {
   width: 0%;
