@@ -691,14 +691,21 @@ button:focus {
   justify-content: space-between;
   padding: 7.5rem 0 11.5rem;
 }
+@media screen and (max-width: 1024px) {
+  .footer__inner {
+    padding: 5rem 0 5rem;
+  }
+}
 .footer__item {
   width: 33.33%;
 }
 @media screen and (max-width: 1024px) {
   .footer__item {
     width: 100%;
-    margin-bottom: 5rem;
   }
+}
+.footer__item:not(:last-child) {
+  margin-bottom: 5rem;
 }
 .footer__title {
   margin-bottom: 2.3rem;
