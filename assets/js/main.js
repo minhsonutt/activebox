@@ -8,6 +8,7 @@
         backToTop.init();
         activeMenuLink.init();
         toggleMenu.init();
+        textAnimation.init();
     })
 
     //global variables
@@ -51,17 +52,13 @@
             this.scrollTrigger();
         },
         scrollTrigger() {
-            if (bannerTitle) {
-                bannerTitle.classList.add('active')
-                bannerTitle.style.transitionDelay = '.2s';
-            }
             if (bannerSubtitle) {
                 bannerSubtitle.classList.add('active')
-                bannerSubtitle.style.transitionDelay = '.5s';
+                bannerSubtitle.style.transitionDelay = '.3s';
             }
             if (bannerBtn) {
                 bannerBtn.classList.add('active')
-                bannerBtn.style.transitionDelay = '.7s';
+                bannerBtn.style.transitionDelay = '.4s';
             }
             window.addEventListener('scroll', this.handleScrollTrigger);
         },
@@ -289,6 +286,30 @@
                     element.classList.remove('hidden');
                 })
             }
+        }
+    }
+
+
+    const textAnimation = {
+        init() {
+            this.textAnimation();
+        },
+        textAnimation() {
+            const texts = bannerTitle.textContent;
+            const textList = [];
+            bannerTitle.textContent = '';
+            const textsLength = texts.split(' ').length;
+            const text = texts.split(' ');
+            for(let i = 0; i < textsLength; i++) {
+                if(text[i] === '') {
+                    textList.push(text[i]);
+                }else if(i === 3) {
+                    textList.push(`<span><span style="animation-delay:${(i * 0.1)}s">${text[i]}</span></br></span>`);
+                }else {
+                    textList.push(`<span><span style="animation-delay:${(i * 0.1)}s">${text[i]}</span></span>`);
+                }
+            }
+            bannerTitle.innerHTML = textList.join('');
         }
     }
 

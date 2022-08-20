@@ -12,25 +12,25 @@
         font-size: 6.5rem;
         font-weight: bold;
         font-weight: 700;
-        line-height: 7.1rem;
+        line-height: 6rem;
         color: $white-color;
-        transform: translateY(50px);
-        transition: opacity .4s ease, transform .4s ease;
-        opacity: 0;
-        &.active {
-            opacity: 1;
-            transform: translateY(0);
+        span {
+            display: inline-block;
+            overflow: hidden;
+            > span {
+                animation: showTextFromBottom .8s backwards;
+                margin-right: 12px;
+            }
         }
-
         text-transform: uppercase;
         @include pc() {
             font-size: 4rem;
             line-height: 1.2;
         }
 
-        @include mobile() {
+        @include tablet() {
             font-size: 3.2rem;
-            line-height: 1.2;
+            line-height: 1;
         }
     }
 
@@ -59,7 +59,7 @@
         line-height: 3.3rem;
         font-weight: 400;
         transform: translateY(50px);
-        transition: opacity .4s ease, transform .4s ease;
+        transition: opacity .5s ease, transform .5s ease;
         opacity: 0;
         &.active {
             opacity: 1;
@@ -73,10 +73,9 @@
             margin: 2.4rem auto 5.3rem;
         }
     }
-    .banner__title,
     .banner__subtitle,
     .js-banner-btn {
-        transition: opacity .4s ease, transform .4s ease;
+        transition: opacity .5s ease, transform .5s ease;
         @include tablet {
             &.hidden {
                 position: relative;
