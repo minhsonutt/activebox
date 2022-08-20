@@ -16,10 +16,14 @@
     const navigation = document.querySelector('.gnb')
     const gnbItems = document.querySelectorAll('.gnb__item');
     const links = document.querySelectorAll('.gnb__link');
-    const backToTopBtn = document.querySelector('.backtotop')
-    const menuBtn = document.querySelector('.toggle-menu')
-    const featureItems = document.querySelectorAll('.features__item')
-    const ourTeams = document.querySelectorAll('.ourteam__item')
+    const backToTopBtn = document.querySelector('.backtotop');
+    const menuBtn = document.querySelector('.toggle-menu');
+    const featureItems = document.querySelectorAll('.features__item');
+    const ourTeams = document.querySelectorAll('.ourteam__item');
+    const bannerTitle = document.querySelector('.banner__title');
+    const bannerSubtitle = document.querySelector('.banner__subtitle');
+    const bannerBtn = document.querySelector('.js-banner-btn')
+    const bannerText = ['banner__title', 'banner__subtitle', 'js-banner-btn'];
     const screenPosition = window.innerHeight;
 
     const fixedNavigation = {
@@ -45,6 +49,18 @@
             this.scrollTrigger();
         },
         scrollTrigger() {
+            if (bannerTitle) {
+                bannerTitle.classList.add('active')
+                bannerTitle.style.transitionDelay = '.2s';
+            }
+            if (bannerSubtitle) {
+                bannerSubtitle.classList.add('active')
+                bannerSubtitle.style.transitionDelay = '.4s';
+            }
+            if (bannerBtn) {
+                bannerBtn.classList.add('active')
+                bannerBtn.style.transitionDelay = '.6s';
+            }
             window.addEventListener('scroll', this.handleScrollTrigger);
         },
         handleScrollTrigger() {
@@ -80,6 +96,7 @@
                     }
                 })
             }
+
         }
     }
 
@@ -238,6 +255,19 @@
                 menuBtn.classList.remove('active')
             } else {
                 menuBtn.classList.add('active')
+            }
+
+            if (navigation.classList.contains('active')) {
+                bannerText.forEach(item => {
+                    const element = document.querySelector(`.${item}`)
+                    element.classList.add('hidden')
+                })
+
+            } else {
+                bannerText.forEach(item => {
+                    const element = document.querySelector(`.${item}`)
+                    element.classList.remove('hidden')
+                })
             }
         }
     }
