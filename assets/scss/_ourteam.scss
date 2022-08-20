@@ -75,6 +75,10 @@
 
         &.ourteam__socials-item--btn::before,
         &.ourteam__socials-item--btn::after {
+            content: '';
+            position: absolute;
+            z-index: 2;
+            background: transparent;
             width: 0%;
             height: 0%;
             opacity: 0;
@@ -82,16 +86,23 @@
         }
 
         &.ourteam__socials-item--btn::before {
+            content: '';
+            position: absolute;
             top: 0;
             right: 0;
-
             border-top: 2px solid $primary-color;
             border-left: 2px solid $primary-color;
+            background: transparent;
+            z-index: 2;
         }
 
         &.ourteam__socials-item--btn::after {
+            content: '';
+            position: absolute;
             bottom: 0;
             left: 0;
+            background: transparent;
+            z-index: 2;
             border-bottom: 2px solid $primary-color;
             border-right: 2px solid $primary-color;
         }

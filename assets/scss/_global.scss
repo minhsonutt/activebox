@@ -6,14 +6,6 @@
     box-sizing: border-box;
 }
 
-::before,
-::after {
-    content: '';
-    position: absolute;
-    background: transparent;
-    z-index: 2;
-}
-
 html {
     font-size: 62.5%;
 
@@ -65,6 +57,8 @@ button:focus {
 }
 
 .btn {
+    display: inline-block;
+    line-height: 46px;
     width: 200px;
     height: 46px;
     font-family: $primary-font;
