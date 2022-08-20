@@ -23,7 +23,9 @@
     const bannerTitle = document.querySelector('.banner__title');
     const bannerSubtitle = document.querySelector('.banner__subtitle');
     const bannerBtn = document.querySelector('.js-banner-btn')
+    const testimonials = document.querySelector('.testimonials');
     const bannerText = ['banner__title', 'banner__subtitle', 'js-banner-btn'];
+    const downloadContent = ['download__title', 'download__subtitle', 'js-download-btn'];
     const screenPosition = window.innerHeight;
 
     const fixedNavigation = {
@@ -77,26 +79,44 @@
                 featureItems.forEach((feature, idx) => {
                     let featurePositon = feature.getBoundingClientRect().top
                     if (idx > 0) {
-                        feature.style.transitionDelay = `${(idx / 10) * 1.2}s`
+                        feature.style.transitionDelay = `${(idx / 10) * 1.2}s`;
                     }
                     if (featurePositon < screenPosition) {
-                        feature.classList.add('active')
+                        feature.classList.add('active');
                     }
                 })
             }
 
             if (ourTeams) {
                 ourTeams.forEach((member, idx) => {
-                    let ourTeamPositon = member.getBoundingClientRect().top
+                    let ourTeamPositon = member.getBoundingClientRect().top;
                     if (idx > 0) {
-                        member.style.transitionDelay = `${(idx / 10) * 1.2}s`
+                        member.style.transitionDelay = `${(idx / 10) * 1.2}s`;
                     }
                     if (ourTeamPositon < screenPosition) {
-                        member.classList.add('active')
+                        member.classList.add('active');
                     }
                 })
             }
 
+            if(testimonials) {
+                const testimonialsPosition = testimonials.getBoundingClientRect().top;
+                if(testimonialsPosition < screenPosition) {
+                    testimonials.style.transitionDelay = '.2s';
+                    testimonials.classList.add('active');
+                }
+            }
+
+            if (downloadContent) {
+                downloadContent.forEach((item, idx) => {
+                    const element = document.querySelector(`.${item}`);
+                    const elementPositon = element.getBoundingClientRect().top;
+                    if (elementPositon < screenPosition) {
+                        element.style.transitionDelay = `.${idx + 1}s`;
+                        element.classList.add('active');
+                    }
+                })
+            }
         }
     }
 
@@ -168,7 +188,7 @@
         scrollSpy() {
             links.forEach(item => {
                 item.addEventListener('click', (e) => {
-                    e.preventDefault()
+                    e.preventDefault();
                     const id = item.dataset.link;
                     const section = document.querySelector(`#${id}`);
                     if (section) {
@@ -193,22 +213,22 @@
             window.addEventListener('scroll', () => {
                 const sectionList = ['features', 'works', 'ourteam', 'testimonials', 'download'];
                 sectionList.forEach(section => {
-                    const currentSection = document.querySelector(`#${section}`)
+                    const currentSection = document.querySelector(`#${section}`);
 
-                    currentSectionPosition = currentSection.getBoundingClientRect().top
+                    currentSectionPosition = currentSection.getBoundingClientRect().top;
 
                     const linkActive = document.querySelector(`[data-link=${section}]`);
                     if (currentSection) {
                         if (currentSectionPosition < screenPosition - 600) {
                             links.forEach(link => {
-                                link.classList.remove('active')
+                                link.classList.remove('active');
                             })
-                            linkActive.classList.add('active')
+                            linkActive.classList.add('active');
                         }
                     }
                     if (window.pageYOffset === 0) {
                         links.forEach(link => {
-                            link.classList.remove('active')
+                            link.classList.remove('active');
                         })
                     }
                 })
@@ -222,51 +242,51 @@
         },
         toggleMenu() {
             if (menuBtn) {
-                menuBtn.addEventListener('click', this.handleClickToggleMenu)
+                menuBtn.addEventListener('click', this.handleClickToggleMenu);
             }
         },
         handleClickToggleMenu() {
             gnbItems.forEach((item, idx) => {
-                item.classList.remove('active')
+                item.classList.remove('active');
                 if (idx > 0) {
-                    item.style.transitionDelay = '0s'
+                    item.style.transitionDelay = '0s';
                 }
             })
             if (navigation.classList.contains('active')) {
-                navigation.classList.remove('active')
-                document.body.style.overflowY = 'auto'
+                navigation.classList.remove('active');
+                document.body.style.overflowY = 'auto';
             }
             else {
                 gnbItems.forEach((item, idx) => {
-                    item.classList.add('active')
+                    item.classList.add('active');
                     if (idx > 0) {
-                        item.style.transitionDelay = `${idx / 10}s`
+                        item.style.transitionDelay = `${idx / 10}s`;
                     }
                     item.addEventListener('click', () => {
-                        navigation.classList.remove('active')
-                        menuBtn.classList.remove('active')
-                        document.body.style.overflowY = 'auto'
+                        navigation.classList.remove('active');
+                        menuBtn.classList.remove('active');
+                        document.body.style.overflowY = 'auto';
                     })
                 })
                 navigation.classList.add('active')
-                document.body.style.overflowY = 'hidden'
+                document.body.style.overflowY = 'hidden';
             }
 
             if (menuBtn.classList.contains('active')) {
-                menuBtn.classList.remove('active')
+                menuBtn.classList.remove('active');
             } else {
-                menuBtn.classList.add('active')
+                menuBtn.classList.add('active');
             }
 
             if (navigation.classList.contains('active')) {
                 bannerText.forEach(item => {
-                    const element = document.querySelector(`.${item}`)
-                    element.classList.add('hidden')
+                    const element = document.querySelector(`.${item}`);
+                    element.classList.add('hidden');
                 })
             } else {
                 bannerText.forEach(item => {
-                    const element = document.querySelector(`.${item}`)
-                    element.classList.remove('hidden')
+                    const element = document.querySelector(`.${item}`);
+                    element.classList.remove('hidden');
                 })
             }
         }
@@ -277,8 +297,8 @@
             this.backToTop();
         },
         backToTop() {
-            window.addEventListener('scroll', this.handleScrollDisplayBackToTop)
-            backToTopBtn.addEventListener('click', this.handleCickBackToTop)
+            window.addEventListener('scroll', this.handleScrollDisplayBackToTop);
+            backToTopBtn.addEventListener('click', this.handleCickBackToTop);
         },
         handleCickBackToTop() {
             if (backToTop) {
@@ -291,9 +311,9 @@
         handleScrollDisplayBackToTop() {
             if (backToTop) {
                 if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
-                    backToTopBtn.classList.add('active')
+                    backToTopBtn.classList.add('active');
                 } else {
-                    backToTopBtn.classList.remove('active')
+                    backToTopBtn.classList.remove('active');
                 }
             }
         }

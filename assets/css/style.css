@@ -653,6 +653,15 @@ button:focus {
   width: 25px;
 }
 
+.testimonials {
+  opacity: 0;
+  transform: translateY(100px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+.testimonials.active {
+  opacity: 1;
+  transform: translateY(0);
+}
 .testimonials__inner {
   display: flex;
   flex-wrap: wrap;
@@ -729,6 +738,7 @@ button:focus {
   width: 12px;
   height: 12px;
 }
+
 .download {
   padding: 10rem 0;
 }
@@ -736,6 +746,13 @@ button:focus {
   font-size: 2.8rem;
   color: #2d3033;
   font-weight: 300;
+  opacity: 0;
+  transform: translateY(50px);
+  transition: opacity 0.4s ease, transform 0.4s ease;
+}
+.download__title.active {
+  opacity: 1;
+  transform: translateY(0);
 }
 .download__subtitle {
   margin: 2.2rem 0 4rem;
@@ -743,6 +760,22 @@ button:focus {
   font-weight: 700;
   text-transform: uppercase;
   color: #2d3033;
+  opacity: 0;
+  transform: translateY(50px);
+  transition: opacity 0.4s ease, transform 0.4s ease;
+}
+.download__subtitle.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+.download .js-download-btn {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: opacity 0.4s ease, transform 0.4s ease;
+}
+.download .js-download-btn.active {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .footer {
