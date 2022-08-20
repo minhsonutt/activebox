@@ -103,17 +103,6 @@ button:focus {
   line-height: 7.1rem;
   color: #fff;
   text-transform: uppercase;
-  opacity: 0;
-  transform: translateY(50px);
-  transition: opacity 0.4s ease, transform 0.4s ease;
-}
-.banner__title.active {
-  opacity: 1;
-  transform: translateY(0);
-}
-.banner__title.hidden {
-  position: relative;
-  z-index: -1;
 }
 @media screen and (max-width: 1200px) {
   .banner__title {
@@ -151,17 +140,6 @@ button:focus {
   margin: 2.4rem auto 7.3rem;
   line-height: 3.3rem;
   font-weight: 400;
-  opacity: 0;
-  transform: translateY(50px);
-  transition: opacity 0.4s ease, transform 0.4s ease;
-}
-.banner__subtitle.active {
-  opacity: 1;
-  transform: translateY(0);
-}
-.banner__subtitle.hidden {
-  position: relative;
-  z-index: -1;
 }
 @media screen and (max-width: 600px) {
   .banner__subtitle {
@@ -170,18 +148,26 @@ button:focus {
     margin: 2.4rem auto 5.3rem;
   }
 }
+@media screen and (max-width: 1024px) {
+  .banner .banner__title,
+.banner .banner__subtitle,
 .banner .js-banner-btn {
-  transform: translateY(50px);
-  transition: opacity 0.4s ease, transform 0.4s ease;
-  opacity: 0;
-}
+    transform: translateY(50px);
+    transition: opacity 0.4s ease, transform 0.4s ease;
+    opacity: 0;
+  }
+  .banner .banner__title.active,
+.banner .banner__subtitle.active,
 .banner .js-banner-btn.active {
-  opacity: 1;
-  transform: translateY(0);
-}
+    opacity: 1;
+    transform: translateY(0);
+  }
+  .banner .banner__title.hidden,
+.banner .banner__subtitle.hidden,
 .banner .js-banner-btn.hidden {
-  position: relative;
-  z-index: -1;
+    position: relative;
+    z-index: -1;
+  }
 }
 
 .header {

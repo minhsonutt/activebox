@@ -15,18 +15,6 @@
         line-height: 7.1rem;
         color: $white-color;
         text-transform: uppercase;
-        opacity: 0;
-        transform: translateY(50px);
-        transition: opacity .4s ease, transform .4s ease;
-        &.active {
-            opacity: 1;
-            transform: translateY(0);
-        }
-        &.hidden {
-            position: relative;
-            z-index: -1;
-        }
-
         @include pc() {
             font-size: 4rem;
             line-height: 1.2;
@@ -39,7 +27,6 @@
     }
 
     &__txt {
-
         width: 80%;
         margin: 0 auto;
         margin-top: 9rem;
@@ -63,35 +50,30 @@
         margin: 2.4rem auto 7.3rem;
         line-height: 3.3rem;
         font-weight: 400;
-        opacity: 0;
-        transform: translateY(50px);
-        transition: opacity .4s ease, transform .4s ease;
-        &.active {
-            opacity: 1;
-            transform: translateY(0);
-        }
-        &.hidden {
-            position: relative;
-            z-index: -1;
-        }
         @include mobile() {
             font-size: 1.8rem;
             line-height: 1.5;
             margin: 2.4rem auto 5.3rem;
         }
     }
-
+    .banner__title,
+    .banner__subtitle,
     .js-banner-btn {
-        transform: translateY(50px);
-        transition: opacity .4s ease, transform .4s ease;
-        opacity: 0;
-        &.active {
-            opacity: 1;
-            transform: translateY(0);
+        @include tablet {
+            transform: translateY(50px);
+            transition: opacity .4s ease, transform .4s ease;
+            opacity: 0;
+    
+            &.active {
+                opacity: 1;
+                transform: translateY(0);
+            }
+    
+            &.hidden {
+                position: relative;
+                z-index: -1;
+            }
         }
-        &.hidden {
-            position: relative;
-            z-index: -1;
-        }
+     
     }
 }

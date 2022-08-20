@@ -262,7 +262,6 @@
                     const element = document.querySelector(`.${item}`)
                     element.classList.add('hidden')
                 })
-
             } else {
                 bannerText.forEach(item => {
                     const element = document.querySelector(`.${item}`)
