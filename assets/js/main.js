@@ -14,10 +14,14 @@
     const header = document.querySelector('.header');
     const galleryItems = document.querySelectorAll('.works__item');
     const navigation = document.querySelector('.gnb')
+    const gnbItems = document.querySelectorAll('.gnb__item');
     const links = document.querySelectorAll('.gnb__link');
     const backToTopBtn = document.querySelector('.backtotop')
     const menuBtn = document.querySelector('.toggle-menu')
+    const featureItems = document.querySelectorAll('.features__item')
+    const ourTeams = document.querySelectorAll('.ourteam__item')
     const screenPosition = window.innerHeight;
+
     const fixedNavigation = {
         init() {
             this.fixedNavigation();
@@ -36,8 +40,6 @@
         }
     }
 
-    const featureItems = document.querySelectorAll('.features__item')
-    const ourTeams = document.querySelectorAll('.ourteam__item')
 
     const scrollTrigger = {
         init() {
@@ -210,12 +212,26 @@
             }
         },
         handleClickToggleMenu() {
-
+            gnbItems.forEach((item, idx) => {
+                    item.classList.remove('active')
+                    if(idx > 0) {
+                        item.style.transitionDelay = '0s'
+                    }
+            })
             if (navigation.classList.contains('active')) {
                 navigation.classList.remove('active')
                 document.body.style.overflowY = 'auto'
             }
             else {
+                gnbItems.forEach((item, idx) => {
+                    item.classList.add('active')
+                    if(idx > 0) {
+                        item.style.transitionDelay = `${(idx / 10) * 1.2}s`
+                    }
+                    item.addEventListener('click', () => {
+                        navigation.classList.remove('active')
+                    })
+                })
                 navigation.classList.add('active')
                 document.body.style.overflowY = 'hidden'
             }
