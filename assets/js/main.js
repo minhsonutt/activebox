@@ -55,11 +55,11 @@
             }
             if (bannerSubtitle) {
                 bannerSubtitle.classList.add('active')
-                bannerSubtitle.style.transitionDelay = '.4s';
+                bannerSubtitle.style.transitionDelay = '.5s';
             }
             if (bannerBtn) {
                 bannerBtn.classList.add('active')
-                bannerBtn.style.transitionDelay = '.6s';
+                bannerBtn.style.transitionDelay = '.7s';
             }
             window.addEventListener('scroll', this.handleScrollTrigger);
         },
@@ -245,6 +245,7 @@
                     item.addEventListener('click', () => {
                         navigation.classList.remove('active')
                         menuBtn.classList.remove('active')
+                        document.body.style.overflowY = 'auto'
                     })
                 })
                 navigation.classList.add('active')
