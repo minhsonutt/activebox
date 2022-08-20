@@ -202,7 +202,7 @@ button:focus {
     background-color: #2a2d48;
     flex-direction: column;
     z-index: 98;
-    transition: all 0.3s ease;
+    transition: all 0.4s ease;
     opacity: 0;
     visibility: hidden;
   }

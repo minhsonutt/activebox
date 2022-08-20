@@ -40,7 +40,6 @@
         }
     }
 
-
     const scrollTrigger = {
         init() {
             this.scrollTrigger();
@@ -100,7 +99,6 @@
                     clickable: true,
                 },
                 breakpoints: {
-                    // when window width is >= 320px
                     320: {
                         slidesPerView: 1,
 
@@ -123,7 +121,6 @@
             })
         }
     }
-
 
     const testimonialsSlide = {
         init() {
@@ -213,10 +210,10 @@
         },
         handleClickToggleMenu() {
             gnbItems.forEach((item, idx) => {
-                    item.classList.remove('active')
-                    if(idx > 0) {
-                        item.style.transitionDelay = '0s'
-                    }
+                item.classList.remove('active')
+                if (idx > 0) {
+                    item.style.transitionDelay = '0s'
+                }
             })
             if (navigation.classList.contains('active')) {
                 navigation.classList.remove('active')
@@ -225,11 +222,12 @@
             else {
                 gnbItems.forEach((item, idx) => {
                     item.classList.add('active')
-                    if(idx > 0) {
-                        item.style.transitionDelay = `${(idx / 10) * 1.2}s`
+                    if (idx > 0) {
+                        item.style.transitionDelay = `${idx / 10}s`
                     }
                     item.addEventListener('click', () => {
                         navigation.classList.remove('active')
+                        menuBtn.classList.remove('active')
                     })
                 })
                 navigation.classList.add('active')
