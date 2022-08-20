@@ -289,27 +289,26 @@
         }
     }
 
-
     const textAnimation = {
         init() {
             this.textAnimation();
         },
         textAnimation() {
-            const texts = bannerTitle.textContent;
-            const textList = [];
+            const bannerText = bannerTitle.textContent;
+            const wordList = [];
             bannerTitle.textContent = '';
-            const textsLength = texts.split(' ').length;
-            const text = texts.split(' ');
-            for(let i = 0; i < textsLength; i++) {
-                if(text[i] === '') {
-                    textList.push(text[i]);
+            const textList = bannerText.split(' ');
+            const textLength = textList.length;
+            for(let i = 0; i < textLength; i++) {
+                if(textList[i] === '') {
+                    wordList.push(text[i]);
                 }else if(i === 3) {
-                    textList.push(`<span><span style="animation-delay:${(i * 0.1)}s">${text[i]}</span></br></span>`);
+                    wordList.push(`<span><span style="animation-delay:${(i * 0.1)}s">${textList[i]}</span></br></span>`);
                 }else {
-                    textList.push(`<span><span style="animation-delay:${(i * 0.1)}s">${text[i]}</span></span>`);
+                    wordList.push(`<span><span style="animation-delay:${(i * 0.1)}s">${textList[i]}</span></span>`);
                 }
             }
-            bannerTitle.innerHTML = textList.join('');
+            bannerTitle.innerHTML = wordList.join('');
         }
     }
 
