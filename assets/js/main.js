@@ -195,7 +195,7 @@
                         const headerHeight = header.offsetHeight;
                         const sectionPosition = section.offsetTop - headerHeight;
                         window.scrollTo({
-                            top: sectionPosition - headerHeight,
+                            top: sectionPosition - headerHeight + 50,
                             behavior: "smooth"
                         });
                     }
