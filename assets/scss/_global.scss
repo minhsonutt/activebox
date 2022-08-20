@@ -58,7 +58,6 @@ button:focus {
 
 .btn {
     display: inline-block;
-    line-height: 46px;
     width: 200px;
     height: 46px;
     font-family: $primary-font;
@@ -67,7 +66,7 @@ button:focus {
     text-transform: uppercase;
     border-radius: 2px;
     color: $white-color;
-    line-height: 2.1rem;
+    line-height: 46px;
     cursor: pointer;
     padding-left: 7px;
 
