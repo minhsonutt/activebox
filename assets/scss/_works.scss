@@ -11,12 +11,15 @@
         position: relative;
         opacity: 0;
         transition: opacity .9s;
+
         @include tablet() {
             width: calc(50% - 1px/2);
         }
+
         @include mobile() {
             width: 100%;
         }
+
         &.active {
             opacity: 1;
         }

@@ -2,44 +2,56 @@
     &__inner {
         @include flex (center, center);
     }
+
     &__thumnail,
     &__content {
         height: 500px;
     }
+
     &__thumnail {
         width: 50%;
+
         @include tablet() {
             width: 100%;
         }
     }
+
     &__img {
         height: 100%;
         width: 100%;
         object-fit: cover;
     }
+
     &__content {
         width: 50%;
+
         @include tablet() {
             width: 100%;
         }
+
         background-color: $violet-color;
         padding: 10rem 10rem 0 10rem;
         height: 500px;
+
         @include mobile() {
             padding: 2rem;
             height: auto;
         }
     }
+
     &__txt {
         font-family: $third-font;
         color: $white-color;
         font-size: 3.6rem;
         line-height: 4.2rem;
+
         @include mobile() {
             font-size: 2.5rem;
-        } 
+        }
+
         font-style: italic;
     }
+
     &__info {
         display: inline-block;
         font-size: 1.3rem;
@@ -47,15 +59,17 @@
         color: $white-color;
         font-weight: 700;
         margin-top: 3rem;
+
         @include mobile() {
             font-size: 1rem;
-        } 
+        }
     }
 
     .swiper {
         .swiper-pagination {
             bottom: 127px;
             left: 270px;
+
             .swiper-pagination-bullet {
                 border-radius: 1rem;
                 background: $white-color;
@@ -63,9 +77,8 @@
                 width: 12px;
                 height: 12px;
             }
-            .swiper-pagination-bullet-active {
 
-            }
+            .swiper-pagination-bullet-active {}
         }
     }
 

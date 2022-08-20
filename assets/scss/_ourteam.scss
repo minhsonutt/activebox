@@ -1,10 +1,20 @@
 .ourteam {
     margin: 10rem 0;
+
     @include mobile() {
         margin-bottom: 5rem;
     }
 
     &__item {
+        position: relative;
+        top: 50px;
+        opacity: 0;
+        transition: top .5s ease, opacity .5s ease;
+
+        &.active {
+            opacity: 1;
+            top: 0;
+        }
         @include tablet() {
             text-align: center;
         }
@@ -57,9 +67,11 @@
         border: 1px solid $border-color-2;
         cursor: pointer;
         transition: border .25s ease;
+
         &:hover {
             border-color: transparent;
         }
+
         &.ourteam__socials-item--btn::before,
         &.ourteam__socials-item--btn::after {
             width: 0%;
@@ -67,6 +79,7 @@
             opacity: 0;
             transition: width 0.2s 0.15s linear, height 0.15s linear, opacity 0s 0.35s;
         }
+
         &.ourteam__socials-item--btn::before {
             top: 0;
             right: 0;
@@ -74,17 +87,20 @@
             border-top: 2px solid $primary-color;
             border-left: 2px solid $primary-color;
         }
+
         &.ourteam__socials-item--btn::after {
             bottom: 0;
             left: 0;
             border-bottom: 2px solid $primary-color;
             border-right: 2px solid $primary-color;
         }
+
         &.ourteam__socials-item--btn:hover::before,
         &.ourteam__socials-item--btn:hover::after {
-          width: 100%; height: 99%;
-          opacity: 1;
-          transition: width 0.2s linear, height 0.15s 0.2s linear, opacity 0s;
+            width: 100%;
+            height: 99%;
+            opacity: 1;
+            transition: width 0.2s linear, height 0.15s 0.2s linear, opacity 0s;
         }
     }
 
@@ -104,8 +120,6 @@
             transition: all 0.2s linear;
             background: #fff;
         }
-
-
 
         &--facebook {
             background-position: 7px -127px;

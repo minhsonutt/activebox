@@ -37,7 +37,7 @@
     }
 
     const featureItems = document.querySelectorAll('.features__item')
-
+    const ourTeams = document.querySelectorAll('.ourteam__item')
 
     const scrollTrigger = {
         init() {
@@ -48,13 +48,14 @@
         },
         handleScrollTrigger() {
             if (galleryItems) {
-                galleryItems.forEach(item => {
-                    let galleryPositon = item.getBoundingClientRect().top;
+                galleryItems.forEach(image => {
+                    let galleryPositon = image.getBoundingClientRect().top;
                     if (galleryPositon < screenPosition) {
-                        item.classList.add('active');
+                        image.classList.add('active');
                     }
                 });
             }
+
             if (featureItems) {
                 featureItems.forEach((feature, idx) => {
                     let featurePositon = feature.getBoundingClientRect().top
@@ -63,6 +64,18 @@
                     }
                     if (featurePositon < screenPosition) {
                         feature.classList.add('active')
+                    }
+                })
+            }
+
+            if (ourTeams) {
+                ourTeams.forEach((member, idx) => {
+                    let ourTeamPositon = member.getBoundingClientRect().top
+                    if (idx > 0) {
+                        member.style.transitionDelay = `${(idx / 10) * 1.2}s`
+                    }
+                    if (ourTeamPositon < screenPosition) {
+                        member.classList.add('active')
                     }
                 })
             }

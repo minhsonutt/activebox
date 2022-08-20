@@ -15,10 +15,12 @@
     cursor: pointer;
     transition: all .25s ease;
     transform: translateY(50%);
+
     @include mobile() {
         bottom: 20px;
         right: 20px;
     }
+
     &.active {
         opacity: 1;
         visibility: visible;

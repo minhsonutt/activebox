@@ -1,21 +1,27 @@
 .footer {
     background-color: $blue-light-color;
+
     &__inner {
         @include flex(center, space-between);
         padding: 7.5rem 0 11.5rem;
+
         @include tablet() {
             padding: 5rem 0 5rem;
         }
     }
+
     &__item {
         width: 33.33%;
+
         @include tablet() {
             width: 100%;
         }
+
         &:not(:last-child) {
             margin-bottom: 5rem;
         }
     }
+
     &__title {
         margin-bottom: 2.3rem;
         font-size: 1.4rem;
@@ -23,6 +29,7 @@
         font-weight: 700;
         text-transform: uppercase;
     }
+
     &__txt {
         font-size: 1.4rem;
         color: $grey-color;
@@ -30,12 +37,12 @@
     }
 
     &__socials-list {
-        @include flex (center,center);
+        @include flex (center, center);
         gap: 7px;
     }
 
     &__socials-item {
-        @include flex(center,center);
+        @include flex(center, center);
         width: 40px;
         height: 40px;
         border: 2px solid $white-color;
@@ -43,6 +50,7 @@
         cursor: pointer;
 
     }
+
     &__socials-icon {
         display: inline-block;
         background: url(../images/icon/sp_icon.png) no-repeat;
@@ -67,17 +75,19 @@
         background-position: -44px -128px;
     }
 
-     &__copyright {
-        @include flex(center,center);
+    &__copyright {
+        @include flex(center, center);
         line-height: 2.2rem;
         padding: 3rem 0;
         background-color: $blue-dark-color;
-     }
-     &__copyright-txt{
+    }
+
+    &__copyright-txt {
         font-size: 1.4rem;
         color: $grey-text-color;
-     }
-     &__copyright-icon {
+    }
+
+    &__copyright-icon {
         color: $white-color;
-     }
+    }
 }
