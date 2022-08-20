@@ -303,9 +303,17 @@ button:focus {
   padding: 0 55px;
 }
 .features__item {
+  position: relative;
   width: calc(33.33% - 62.6666666667px);
   text-align: center;
   margin-bottom: 7.5rem;
+  top: 50px;
+  opacity: 0;
+  transition: top 0.5s ease, opacity 0.5s ease;
+}
+.features__item.active {
+  opacity: 1;
+  top: 0;
 }
 @media screen and (max-width: 1024px) {
   .features__item {
@@ -458,8 +466,7 @@ button:focus {
 }
 
 .ourteam {
-  margin-top: 10rem;
-  margin-bottom: 20rem;
+  margin: 10rem 0;
 }
 @media screen and (max-width: 600px) {
   .ourteam {
@@ -578,14 +585,14 @@ button:focus {
   padding-bottom: 7rem;
 }
 .ourteam .swiper .swiper-pagination .swiper-pagination-bullet {
-  width: 2rem;
+  width: 11px;
   border-radius: 1rem;
   background: #e84545;
-  height: 0.7rem;
-  transition: width 0.25s ease-in-out;
+  height: 11px;
+  transition: width 0.3s ease;
 }
 .ourteam .swiper .swiper-pagination .swiper-pagination-bullet-active {
-  width: 4rem;
+  width: 25px;
 }
 
 .testimonials__inner {

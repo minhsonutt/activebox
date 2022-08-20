@@ -1,7 +1,5 @@
 .ourteam {
-    margin-top: 10rem;
-    margin-bottom: 20rem;
-
+    margin: 10rem 0;
     @include mobile() {
         margin-bottom: 5rem;
     }
@@ -129,15 +127,15 @@
 
         .swiper-pagination {
             .swiper-pagination-bullet {
-                width: 2rem;
+                width: 11px;
                 border-radius: 1rem;
                 background: $primary-color;
-                height: .7rem;
-                transition: width .25s ease-in-out;
+                height: 11px;
+                transition: width .3s ease;
             }
 
             .swiper-pagination-bullet-active {
-                width: 4rem;
+                width: 25px;
             }
         }
     }
