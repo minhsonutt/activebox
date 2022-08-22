@@ -120,13 +120,13 @@ button:focus {
   overflow: hidden;
 }
 .banner__title span > span {
-  animation: showTextFromBottom 0.8s backwards;
+  animation: showTextFromBottom 0.6s backwards;
   margin-right: 12px;
 }
 @media screen and (max-width: 1200px) {
   .banner__title {
     font-size: 4rem;
-    line-height: 1.2;
+    line-height: 1;
   }
 }
 @media screen and (max-width: 1024px) {
@@ -159,11 +159,14 @@ button:focus {
   margin: 2.4rem auto 7.3rem;
   line-height: 3.3rem;
   font-weight: 400;
-  transform: translateY(50px);
-  transition: opacity 0.5s ease, transform 0.5s ease;
-  opacity: 0;
+  overflow: hidden;
 }
-.banner__subtitle.active {
+.banner__subtitle span {
+  display: inline-block;
+  transform: translateY(150px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+.banner__subtitle span.active {
   opacity: 1;
   transform: translateY(0);
 }

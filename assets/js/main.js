@@ -22,7 +22,7 @@
     const featureItems = document.querySelectorAll('.features__item');
     const ourTeams = document.querySelectorAll('.ourteam__item');
     const bannerTitle = document.querySelector('.banner__title');
-    const bannerSubtitle = document.querySelector('.banner__subtitle');
+    const bannerSubtitle = document.querySelector('.banner__subtitle span');
     const bannerBtn = document.querySelector('.js-banner-btn')
     const testimonials = document.querySelector('.testimonials');
     const bannerText = ['banner__title', 'banner__subtitle', 'js-banner-btn'];
@@ -186,7 +186,6 @@
             links.forEach(item => {
                 item.addEventListener('click', (e) => {
                     e.preventDefault();
-
                     const id = item.dataset.link;
                     const section = document.querySelector(`#${id}`);
                     if (section) {
@@ -214,7 +213,6 @@
                     const currentSection = document.querySelector(`#${section}`);
 
                     currentSectionPosition = currentSection.getBoundingClientRect().top;
-
                     const linkActive = document.querySelector(`[data-link=${section}]`);
                     if (currentSection) {
                         if (currentSectionPosition < screenPosition - 600) {

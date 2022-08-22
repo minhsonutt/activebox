@@ -18,14 +18,14 @@
             display: inline-block;
             overflow: hidden;
             > span {
-                animation: showTextFromBottom .8s backwards;
+                animation: showTextFromBottom .6s backwards;
                 margin-right: 12px;
             }
         }
         text-transform: uppercase;
         @include pc() {
             font-size: 4rem;
-            line-height: 1.2;
+            line-height: 1;
         }
 
         @include tablet() {
@@ -58,14 +58,16 @@
         margin: 2.4rem auto 7.3rem;
         line-height: 3.3rem;
         font-weight: 400;
-        transform: translateY(50px);
-        transition: opacity .5s ease, transform .5s ease;
-        opacity: 0;
-        &.active {
-            opacity: 1;
-            transform: translateY(0);
+        overflow: hidden;
+        span {
+            display: inline-block;
+            transform: translateY(150px);
+            transition: opacity .7s ease, transform .7s ease;
+            &.active {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
-
 
         @include mobile() {
             font-size: 1.8rem;
@@ -73,6 +75,7 @@
             margin: 2.4rem auto 5.3rem;
         }
     }
+
     .banner__title,
     .banner__subtitle,
     .js-banner-btn {
