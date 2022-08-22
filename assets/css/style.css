@@ -174,12 +174,14 @@ button:focus {
     margin: 2.4rem auto 5.3rem;
   }
 }
+.banner .banner__title,
 .banner .banner__subtitle,
 .banner .js-banner-btn {
   transition: opacity 0.5s ease, transform 0.5s ease;
 }
 @media screen and (max-width: 1024px) {
-  .banner .banner__subtitle.hidden,
+  .banner .banner__title.hidden,
+.banner .banner__subtitle.hidden,
 .banner .js-banner-btn.hidden {
     position: relative;
     z-index: -1;

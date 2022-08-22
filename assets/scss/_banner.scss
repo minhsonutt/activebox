@@ -73,6 +73,7 @@
             margin: 2.4rem auto 5.3rem;
         }
     }
+    .banner__title,
     .banner__subtitle,
     .js-banner-btn {
         transition: opacity .5s ease, transform .5s ease;
@@ -82,7 +83,7 @@
                 z-index: -1;
             }
         }
-     
+
     }
     .js-banner-btn {
         transform: translateY(50px);
