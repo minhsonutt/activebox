@@ -12,7 +12,9 @@
 
 html {
   font-size: 62.5%;
+  scroll-behavior: smooth;
 }
+
 body {
   font-family: "Raleway", sans-serif;
   font-size: 1.6rem;
@@ -94,7 +96,7 @@ button:focus {
   }
 }
 .banner {
-  background-image: url(../images/header/header_bg.png);
+  background-image: url(../images/banner/img_banner_bg.png);
   background-position: center;
   background-size: cover;
   min-height: 750px;
@@ -110,7 +112,6 @@ button:focus {
   font-family: "Open Sans", sans-serif;
   font-size: 6.5rem;
   font-weight: bold;
-  font-weight: 700;
   line-height: 6rem;
   color: #fff;
   text-transform: uppercase;
@@ -166,7 +167,7 @@ button:focus {
   transform: translateY(150px);
   transition: opacity 0.7s ease, transform 0.7s ease;
 }
-.banner__subtitle span.active {
+.banner__subtitle span.is-active {
   opacity: 1;
   transform: translateY(0);
 }
@@ -194,7 +195,7 @@ button:focus {
   transform: translateY(50px);
   opacity: 0;
 }
-.banner .js-banner-btn.active {
+.banner .js-banner-btn.is-active {
   opacity: 1;
   transform: translateY(0);
 }
@@ -207,8 +208,7 @@ button:focus {
   width: 100%;
 }
 .header__logo {
-  position: relative;
-  z-index: 99;
+  z-index: 2;
 }
 .header__inner {
   display: flex;
@@ -223,7 +223,7 @@ button:focus {
 .header--fixed {
   position: fixed;
   background-color: #2a2d48;
-  z-index: 99;
+  z-index: 3;
 }
 .header--fixed .header__inner {
   padding: 2.5rem 0;
@@ -231,7 +231,7 @@ button:focus {
 }
 
 @media screen and (max-width: 1024px) {
-  .gnb.active .gnb__list {
+  .gnb.is-active .gnb__list {
     opacity: 1;
     visibility: visible;
   }
@@ -252,7 +252,7 @@ button:focus {
     height: 100vh;
     background-color: #2a2d48;
     flex-direction: column;
-    z-index: 98;
+    z-index: 1;
     transition: all 0.4s ease;
     opacity: 0;
     visibility: hidden;
@@ -274,7 +274,7 @@ button:focus {
     position: relative;
     top: 50px;
   }
-  .gnb__item.active {
+  .gnb__item.is-active {
     top: 0;
     opacity: 1;
   }
@@ -297,7 +297,7 @@ button:focus {
 .gnb__link:hover {
   color: #fff;
 }
-.gnb__link.active {
+.gnb__link.is-active {
   color: #e84545;
 }
 
@@ -316,14 +316,14 @@ button:focus {
     display: block;
   }
 }
-.toggle-menu.active .toggle-menu__line:first-child {
+.toggle-menu.is-active .toggle-menu__line:first-child {
   width: 100%;
   transform: translateY(0px) rotate(45deg);
 }
-.toggle-menu.active .toggle-menu__line:nth-child(2) {
+.toggle-menu.is-active .toggle-menu__line:nth-child(2) {
   transform: translateX(150%);
 }
-.toggle-menu.active .toggle-menu__line:last-child {
+.toggle-menu.is-active .toggle-menu__line:last-child {
   width: 100%;
   transform: translateY(0px) rotate(-45deg);
 }
@@ -374,7 +374,7 @@ button:focus {
   opacity: 0;
   transition: top 0.5s ease, opacity 0.5s ease;
 }
-.features__item.active {
+.features__item.is-active {
   opacity: 1;
   top: 0;
 }
@@ -473,7 +473,7 @@ button:focus {
     width: 100%;
   }
 }
-.works__item.active {
+.works__item.is-active {
   opacity: 1;
 }
 .works__item:hover .works__img {
@@ -542,7 +542,7 @@ button:focus {
   opacity: 0;
   transition: top 0.5s ease, opacity 0.5s ease;
 }
-.ourteam__item.active {
+.ourteam__item.is-active {
   opacity: 1;
   top: 0;
 }
@@ -557,6 +557,7 @@ button:focus {
   }
 }
 .ourteam__name {
+  display: block;
   margin: 2.6rem 0 0.8rem;
   font-size: 2.2rem;
   font-weight: 400;
@@ -570,10 +571,10 @@ button:focus {
   text-transform: uppercase;
 }
 .ourteam__desc {
+  margin-bottom: 2.5rem;
   font-size: 1.4rem;
   color: #6c7279;
   line-height: 2.1rem;
-  margin-bottom: 2.5rem;
 }
 .ourteam__socials-list {
   display: flex;
@@ -606,17 +607,17 @@ button:focus {
 .ourteam__socials-item:hover {
   border-color: transparent;
 }
-.ourteam__socials-item.ourteam__socials-item--btn::before, .ourteam__socials-item.ourteam__socials-item--btn::after {
+.ourteam__socials-item::before, .ourteam__socials-item::after {
   content: "";
   position: absolute;
-  z-index: 2;
+  z-index: 1;
   background: transparent;
   width: 0%;
   height: 0%;
   opacity: 0;
   transition: width 0.2s 0.15s linear, height 0.15s linear, opacity 0s 0.35s;
 }
-.ourteam__socials-item.ourteam__socials-item--btn::before {
+.ourteam__socials-item::before {
   content: "";
   position: absolute;
   top: 0;
@@ -624,19 +625,19 @@ button:focus {
   border-top: 2px solid #e84545;
   border-left: 2px solid #e84545;
   background: transparent;
-  z-index: 2;
+  z-index: 1;
 }
-.ourteam__socials-item.ourteam__socials-item--btn::after {
+.ourteam__socials-item::after {
   content: "";
   position: absolute;
   bottom: 0;
   left: 0;
   background: transparent;
-  z-index: 2;
+  z-index: 1;
   border-bottom: 2px solid #e84545;
   border-right: 2px solid #e84545;
 }
-.ourteam__socials-item.ourteam__socials-item--btn:hover::before, .ourteam__socials-item.ourteam__socials-item--btn:hover::after {
+.ourteam__socials-item:hover::before, .ourteam__socials-item:hover::after {
   width: 100%;
   height: 99%;
   opacity: 1;
@@ -666,18 +667,18 @@ button:focus {
 .ourteam__socials-icon--linkedin {
   background-position: -22px -126px;
 }
-.ourteam .swiper .swiper-wrapper {
+.ourteam .swiper-wrapper {
   padding-bottom: 7rem;
 }
-.ourteam .swiper .swiper-pagination .swiper-pagination-bullet {
+.ourteam .swiper-pagination-bullet {
   width: 11px;
   border-radius: 1rem;
   background: #e84545;
   height: 11px;
   transition: width 0.3s ease;
 }
-.ourteam .swiper .swiper-pagination .swiper-pagination-bullet-active {
-  width: 25px;
+.ourteam .swiper-pagination-bullet-active {
+  width: 2.5rem;
 }
 
 .testimonials {
@@ -685,7 +686,7 @@ button:focus {
   transform: translateY(100px);
   transition: opacity 0.5s ease, transform 0.5s ease;
 }
-.testimonials.active {
+.testimonials.is-active {
   opacity: 1;
   transform: translateY(0);
 }
@@ -714,9 +715,9 @@ button:focus {
 }
 .testimonials__content {
   width: 50%;
-  background-color: #53354a;
-  padding: 10rem 10rem 0 10rem;
   height: 500px;
+  padding: 10rem 10rem 0 10rem;
+  background-color: #53354a;
 }
 @media screen and (max-width: 1024px) {
   .testimonials__content {
@@ -743,22 +744,22 @@ button:focus {
 }
 .testimonials__info {
   display: inline-block;
-  font-size: 1.3rem;
-  text-transform: uppercase;
-  color: #fff;
-  font-weight: 700;
   margin-top: 3rem;
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #fff;
+  text-transform: uppercase;
 }
 @media screen and (max-width: 600px) {
   .testimonials__info {
     font-size: 1rem;
   }
 }
-.testimonials .swiper .swiper-pagination {
+.testimonials .swiper-pagination {
   bottom: 127px;
   left: 270px;
 }
-.testimonials .swiper .swiper-pagination .swiper-pagination-bullet {
+.testimonials .swiper-pagination-bullet {
   border-radius: 1rem;
   background: #fff;
   transition: width 0.25s ease-in-out;
@@ -777,11 +778,12 @@ button:focus {
   transform: translateY(50px);
   transition: opacity 0.4s ease, transform 0.4s ease;
 }
-.download__title.active {
+.download__title.is-active {
   opacity: 1;
   transform: translateY(0);
 }
 .download__subtitle {
+  display: block;
   margin: 2.2rem 0 4rem;
   font-size: 1.3rem;
   font-weight: 700;
@@ -791,7 +793,7 @@ button:focus {
   transform: translateY(50px);
   transition: opacity 0.4s ease, transform 0.4s ease;
 }
-.download__subtitle.active {
+.download__subtitle.is-active {
   opacity: 1;
   transform: translateY(0);
 }
@@ -800,7 +802,7 @@ button:focus {
   transform: translateY(50px);
   transition: opacity 0.4s ease, transform 0.4s ease;
 }
-.download .js-download-btn.active {
+.download .js-download-btn.is-active {
   opacity: 1;
   transform: translateY(0);
 }
@@ -833,6 +835,7 @@ button:focus {
   margin-bottom: 5rem;
 }
 .footer__title {
+  display: inline-block;
   margin-bottom: 2.3rem;
   font-size: 1.4rem;
   color: #fff;
@@ -903,22 +906,22 @@ button:focus {
 }
 
 .backtotop {
+  visibility: hidden;
   position: fixed;
   bottom: 40px;
   right: 40px;
+  z-index: 3;
   width: 50px;
   height: 50px;
-  z-index: 97;
-  text-transform: uppercase;
-  background-color: #e84545;
-  color: #fff;
   border-radius: 50%;
+  background-color: #e84545;
   font-size: 1.3rem;
+  color: #fff;
+  text-transform: uppercase;
   opacity: 0;
-  visibility: hidden;
+  transform: translateY(50%);
   cursor: pointer;
   transition: all 0.25s ease;
-  transform: translateY(50%);
 }
 @media screen and (max-width: 600px) {
   .backtotop {
@@ -926,9 +929,9 @@ button:focus {
     right: 20px;
   }
 }
-.backtotop.active {
-  opacity: 1;
+.backtotop.is-active {
   visibility: visible;
+  opacity: 1;
   transform: translateY(0);
 }
 

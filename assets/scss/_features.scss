@@ -15,7 +15,7 @@
         opacity: 0;
         transition: top .5s ease, opacity .5s ease;
 
-        &.active {
+        &.is-active {
             opacity: 1;
             top: 0;
         }

@@ -8,13 +8,14 @@
         opacity: 0;
         transform: translateY(50px);
         transition: opacity .4s ease, transform .4s ease;
-        &.active {
+        &.is-active {
             opacity: 1;
             transform: translateY(0);
         }
     }
 
     &__subtitle {
+        display: block;
         margin: 2.2rem 0 4rem;
         font-size: 1.3rem;
         font-weight: 700;
@@ -23,7 +24,7 @@
         opacity: 0;
         transform: translateY(50px);
         transition: opacity .4s ease, transform .4s ease;
-        &.active {
+        &.is-active {
             opacity: 1;
             transform: translateY(0);
         }
@@ -33,7 +34,7 @@
         opacity: 0;
         transform: translateY(50px);
         transition: opacity .4s ease, transform .4s ease;
-        &.active {
+        &.is-active {
             opacity: 1;
             transform: translateY(0);
         }

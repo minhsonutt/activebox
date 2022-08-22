@@ -1,6 +1,5 @@
 .ourteam {
     margin: 10rem 0;
-
     @include mobile() {
         margin-bottom: 5rem;
     }
@@ -11,7 +10,7 @@
         opacity: 0;
         transition: top .5s ease, opacity .5s ease;
 
-        &.active {
+        &.is-active {
             opacity: 1;
             top: 0;
         }
@@ -28,6 +27,7 @@
     }
 
     &__name {
+        display: block;
         margin: 2.6rem 0 0.8rem;
         font-size: 2.2rem;
         font-weight: 400;
@@ -43,15 +43,14 @@
     }
 
     &__desc {
+        margin-bottom: 2.5rem;
         font-size: 1.4rem;
         color: $text-color;
         line-height: 2.1rem;
-        margin-bottom: 2.5rem
     }
 
     &__socials-list {
         @include flex(center, flex-start);
-
         @include tablet() {
             @include flex(center, center)
         }
@@ -73,11 +72,11 @@
             border-color: transparent;
         }
 
-        &.ourteam__socials-item--btn::before,
-        &.ourteam__socials-item--btn::after {
+        &::before,
+        &::after {
             content: '';
             position: absolute;
-            z-index: 2;
+            z-index: 1;
             background: transparent;
             width: 0%;
             height: 0%;
@@ -85,7 +84,7 @@
             transition: width 0.2s 0.15s linear, height 0.15s linear, opacity 0s 0.35s;
         }
 
-        &.ourteam__socials-item--btn::before {
+        &::before {
             content: '';
             position: absolute;
             top: 0;
@@ -93,22 +92,22 @@
             border-top: 2px solid $primary-color;
             border-left: 2px solid $primary-color;
             background: transparent;
-            z-index: 2;
+            z-index: 1;
         }
 
-        &.ourteam__socials-item--btn::after {
+        &::after {
             content: '';
             position: absolute;
             bottom: 0;
             left: 0;
             background: transparent;
-            z-index: 2;
+            z-index: 1;
             border-bottom: 2px solid $primary-color;
             border-right: 2px solid $primary-color;
         }
 
-        &.ourteam__socials-item--btn:hover::before,
-        &.ourteam__socials-item--btn:hover::after {
+        &:hover::before,
+        &:hover::after {
             width: 100%;
             height: 99%;
             opacity: 1;
@@ -147,22 +146,20 @@
     }
 
     .swiper {
-        .swiper-wrapper {
+        &-wrapper {
             padding-bottom: 7rem;
         }
 
-        .swiper-pagination {
-            .swiper-pagination-bullet {
-                width: 11px;
-                border-radius: 1rem;
-                background: $primary-color;
-                height: 11px;
-                transition: width .3s ease;
+        &-pagination-bullet {
+            width: 11px;
+            border-radius: 1rem;
+            background: $primary-color;
+            height: 11px;
+            transition: width .3s ease;
+            &-active {
+                width: 2.5rem;
             }
 
-            .swiper-pagination-bullet-active {
-                width: 25px;
-            }
         }
     }
 }

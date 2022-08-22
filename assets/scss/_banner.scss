@@ -1,5 +1,5 @@
 .banner {
-    background-image: url(../images/header/header_bg.png);
+    background-image: url(../images/banner/img_banner_bg.png);
     background-position: center;
     background-size: cover;
     min-height: 750px;
@@ -11,7 +11,6 @@
         font-family: $secondary-font;
         font-size: 6.5rem;
         font-weight: bold;
-        font-weight: 700;
         line-height: 6rem;
         color: $white-color;
         span {
@@ -63,7 +62,7 @@
             display: inline-block;
             transform: translateY(150px);
             transition: opacity .7s ease, transform .7s ease;
-            &.active {
+            &.is-active {
                 opacity: 1;
                 transform: translateY(0);
             }
@@ -91,7 +90,7 @@
     .js-banner-btn {
         transform: translateY(50px);
         opacity: 0;
-        &.active {
+        &.is-active {
             opacity: 1;
             transform: translateY(0);
         }

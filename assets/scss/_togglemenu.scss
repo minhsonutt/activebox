@@ -12,7 +12,7 @@
         display: block;
     }
 
-    &.active {
+    &.is-active {
         .toggle-menu__line:first-child {
             width: 100%;
             transform: translateY(0px) rotate(45deg);
