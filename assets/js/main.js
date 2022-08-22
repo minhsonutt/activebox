@@ -264,6 +264,18 @@
                         menuBtn.classList.remove('active');
                         document.body.style.overflowY = 'auto';
                     })
+                    if (navigation.classList.contains('active')) {
+                        bannerText.forEach(item => {
+                            const element = document.querySelector(`.${item}`);
+                            element.classList.add('hidden');
+                        })
+                    } else {
+                        bannerText.forEach(item => {
+                            const element = document.querySelector(`.${item}`);
+                            element.classList.remove('hidden');
+                        })
+                    }
+
                 })
                 navigation.classList.add('active')
                 document.body.style.overflowY = 'hidden';
