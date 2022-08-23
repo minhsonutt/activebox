@@ -11,12 +11,11 @@ feed back:
 - đổi tên hình ảnh -> done
 - bỏ ký tự đặt biệt copyright -> done
 - đặt class chung cho icon -> done
+- order property css -> done
+
+- dulicate css code -> done
+- refactor css code-> done
+
+
+- favicon
 - đặt lại tên color
-
-
-
-
--order property css
--favicon
--dulicate css code
--refactor css code

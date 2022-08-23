@@ -5,10 +5,10 @@
 
     &__item {
         position: relative;
+        overflow: hidden;
         width: calc(25% - 3px/4);
         margin-bottom: 1px;
         cursor: pointer;
-        overflow: hidden;
         opacity: 0;
         transition: opacity .9s;
 
@@ -42,8 +42,8 @@
     }
 
     &__img {
-        min-height: 35rem;
         width: 100%;
+        min-height: 35rem;
         transition: transform .5s;
         object-fit: cover;
     }

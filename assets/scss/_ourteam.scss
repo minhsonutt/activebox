@@ -35,10 +35,8 @@
     }
 
     &__position {
-        display: inline-block;
         margin-bottom: 2.2rem;
         font-size: 1.3rem;
-        font-weight: 400;
         color: $primary-color;
         text-transform: uppercase;
     }
@@ -53,14 +51,12 @@
     &__socials-list {
         @include flex(center, flex-start);
         @include tablet() {
-            @include flex(center, center)
+            justify-content: center
         }
     }
 
     &__socials-item {
-        display: flex;
-        align-items: center;
-        justify-content: center;
+        @include flex(center,center);
         position: relative;
         width: 4rem;
         height: 4rem;
@@ -72,37 +68,30 @@
         &:hover {
             border-color: transparent;
         }
-
+        
         &::before,
         &::after {
             content: '';
             position: absolute;
             z-index: 1;
-            width: 0%;
-            height: 0%;
+            width: 0;
+            height: 0;
             background: transparent;
             opacity: 0;
             transition: width 0.2s 0.15s linear, height 0.15s linear, opacity 0s 0.35s;
         }
 
         &::before {
-            content: '';
-            position: absolute;
             top: 0;
             right: 0;
-            z-index: 1;
+            background: transparent;
             border-top: 2px solid $primary-color;
             border-left: 2px solid $primary-color;
-            background: transparent;
-
         }
 
         &::after {
-            content: '';
-            position: absolute;
             bottom: 0;
             left: 0;
-            z-index: 1;
             background: transparent;
             border-bottom: 2px solid $primary-color;
             border-right: 2px solid $primary-color;
@@ -116,7 +105,6 @@
             transition: width 0.2s linear, height 0.15s 0.2s linear, opacity 0s;
         }
     }
-
 
     .swiper {
         &-wrapper {

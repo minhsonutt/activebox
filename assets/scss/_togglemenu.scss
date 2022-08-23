@@ -37,8 +37,8 @@
     &__line {
         position: absolute;
         left: 0;
-        height: 2px;
         width: 100%;
+        height: 2px;
         background-color: $white-color;
         transition: all .3s ease-in-out;
         &:first-child {

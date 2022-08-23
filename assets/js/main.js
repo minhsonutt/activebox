@@ -266,13 +266,13 @@
                             console.log('if');
                             bannerText.forEach(item => {
                                 const element = document.querySelector(`.${item}`);
-                                element.classList.add('hidden');
+                                element.classList.add('is-hidden');
                             })
                         } else {
                             console.log('else');
                             bannerText.forEach(item => {
                                 const element = document.querySelector(`.${item}`);
-                                element.classList.remove('hidden');
+                                element.classList.remove('is-hidden');
                             })
                         }
                     })
@@ -280,7 +280,7 @@
 
                 })
                 navigation.classList.add('is-active')
-                document.body.style.overflowY = 'hidden';
+                document.body.style.overflowY = 'is-hidden';
             }
 
             if (menuBtn.classList.contains('is-active')) {
@@ -292,12 +292,12 @@
             if (navigation.classList.contains('is-active')) {
                 bannerText.forEach(item => {
                     const element = document.querySelector(`.${item}`);
-                    element.classList.add('hidden');
+                    element.classList.add('is-hidden');
                 })
             } else {
                 bannerText.forEach(item => {
                     const element = document.querySelector(`.${item}`);
-                    element.classList.remove('hidden');
+                    element.classList.remove('is-hidden');
                 })
             }
         }
@@ -317,9 +317,9 @@
                 if(textList[i] === '') {
                     wordList.push(text[i]);
                 }else if(i === 3) {
-                    wordList.push(`<span><span style="animation-delay:${(i * 0.1)}s">${textList[i]}</span></br></span>`);
+                    wordList.push(`<span class="banner__text-wrap"><span class="banner__title-txt" style="animation-delay:${(i * 0.1)}s">${textList[i]}</span></br></span>`);
                 }else {
-                    wordList.push(`<span><span style="animation-delay:${(i * 0.1)}s">${textList[i]}</span></span>`);
+                    wordList.push(`<span class="banner__text-wrap"><span class="banner__title-txt" style="animation-delay:${(i * 0.1)}s">${textList[i]}</span></span>`);
                 }
             }
             bannerTitle.innerHTML = wordList.join('');

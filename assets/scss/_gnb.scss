@@ -1,6 +1,5 @@
     .gnb {
         @include tablet() {
-
             &.is-active {
                 .gnb__list {
                     visibility: visible;
@@ -47,9 +46,8 @@
 
         &__link {
             display: inline-block;
-            font-family: $primary-font;
+            font-family: $primary-font-bold;
             font-size: 1.3rem;
-            font-weight: 700;
             text-transform: uppercase;
             color: $light-white-color;
             transition: color .25s ease;

@@ -36,6 +36,12 @@ a:hover {
     text-decoration: none;
 }
 
+strong,
+span,
+a {
+    display: inline-block;
+}
+
 img {
     display: block;
     max-width: 100%;
@@ -54,7 +60,6 @@ button:focus {
     clip: rect(1px, 1px, 1px, 1px);
     white-space: nowrap;
     overflow: hidden;
-
 }
 
 .text-center {
@@ -62,12 +67,10 @@ button:focus {
 }
 
 .btn {
-    display: inline-block;
     width: 200px;
     height: 46px;
     padding-left: 7px;
     border-radius: 2px;
-    font-family: $primary-font;
     font-size: 1.3rem;
     font-weight: 400;
     text-transform: uppercase;
@@ -80,9 +83,8 @@ button:focus {
 }
 
 .icon {
-    display: inline-block;
     background-image: url(../images/icon/sp_icon.png);
-    background-size: 300px 300px;
+    background-size: 232px 146px;
     background-repeat: no-repeat;
     &--facebook,
     &--facebook-gray {
