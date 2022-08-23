@@ -8,16 +8,15 @@
 
     &__item {
         position: relative;
-        width: calc(33.33% - 188px/3);
-        text-align: center;
-        margin-bottom: 7.5rem;
         top: 50px;
+        width: calc(33.33% - 188px/3);
+        margin-bottom: 7.5rem;
+        text-align: center;
         opacity: 0;
         transition: top .5s ease, opacity .5s ease;
-
         &.is-active {
-            opacity: 1;
             top: 0;
+            opacity: 1;
         }
 
         @include tablet() {
@@ -33,58 +32,16 @@
         @include flex(center, center);
     }
 
-    &__icon {
-        display: inline-block;
-        background: url(../images/icon/sp_icon.png) no-repeat;
-        width: 60px;
-        height: 61px;
-        margin: 0 auto;
-
-        &--penceil {
-            background-position: -45px -63px;
-        }
-
-        &--react {
-            width: 56px;
-            background-position: -109px -63px;
-        }
-
-        &--light {
-            width: 41px;
-            background-position: 0 -63px;
-        }
-
-        &--react {
-            width: 56px;
-            background-position: -109px -63px;
-        }
-
-        &--screen {
-            width: 73px;
-            background-position: -159px 1px;
-        }
-
-        &--bag {
-            width: 72px;
-            background-position: -83px 1px;
-        }
-
-        &--download {
-            width: 79px;
-            background-position: 0px 1px;
-        }
-    }
-
     &__title {
-        font-size: 1.4rem;
-        color: $black-color;
-        text-transform: uppercase;
-        margin: 3.3rem 0 2.6rem;
-        overflow: hidden;
         display: -webkit-box;
         -webkit-box-orient: vertical;
         -webkit-line-clamp: 1;
+        margin: 3.3rem 0 2.6rem;
+        overflow: hidden;
+        font-size: 1.4rem;
+        color: $black-color;
         text-overflow: ellipsis;
+        text-transform: uppercase;
         font-weight: 700;
     }
 

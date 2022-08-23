@@ -41,11 +41,7 @@ img {
     max-width: 100%;
 }
 
-button {
-    border: none;
-    outline: none;
-}
-
+button,
 button:focus {
     border: none;
     outline: none;
@@ -59,18 +55,99 @@ button:focus {
     display: inline-block;
     width: 200px;
     height: 46px;
+    padding-left: 7px;
+    border-radius: 2px;
     font-family: $primary-font;
     font-size: 1.3rem;
     font-weight: 400;
     text-transform: uppercase;
-    border-radius: 2px;
     color: $white-color;
     line-height: 46px;
     cursor: pointer;
-    padding-left: 7px;
-
+    &--primary  {
+        background-color: $primary-color;
+    }
 }
 
-.btn.btn--primary {
-    background-color: $primary-color;
+.icon {
+    display: inline-block;
+    background-image: url(../images/icon/sp_icon.png);
+    background-repeat: no-repeat;
+    &--facebook,
+    &--facebook-gray {
+        width: 8px;
+        height: 18px;
+        background-position: -12px -128px
+    }
+
+    &--twitter,
+    &--twitter-gray {
+        width: 20px;
+        height: 14px;
+        background-position: -88px -128px;
+    }
+
+    &--linkedin,
+    &--linkedin-gray {
+        width: 16px;
+        height: 16px;
+        background-position: -44px -128px;
+    }
+
+    &--facebook-gray {
+        background-position: 0 -127px;
+    }
+
+    &--twitter-gray {
+        background-position: -64px -128px;
+    }
+
+    &--linkedin-gray {
+        background-position: -24px -128px;
+    }
+
+    &--penceil,
+    &--react,
+    &--light,
+    &--react,
+    &--screen,
+    &--bag,
+    &--download {
+        width: 60px;
+        height: 61px;
+    }
+
+    &--penceil {
+        background-position: -45px -63px;
+    }
+
+    &--react {
+        width: 56px;
+        background-position: -109px -63px;
+    }
+
+    &--light {
+        width: 41px;
+        background-position: 0 -63px;
+    }
+
+    &--react {
+        width: 56px;
+        background-position: -109px -63px;
+    }
+
+    &--screen {
+        width: 73px;
+        background-position: -159px 1px;
+    }
+
+    &--bag {
+        width: 72px;
+        background-position: -83px 1px;
+    }
+
+    &--download {
+        width: 79px;
+        background-position: 0px 1px;
+    }
 }

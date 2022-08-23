@@ -10,8 +10,7 @@ feed back:
 - z-index -> done
 - đổi tên hình ảnh -> done
 - bỏ ký tự đặt biệt copyright -> done
-
-
-- đặt class chung cho icon
+- đặt class chung cho icon -> done
+- đặt lại tên color
 
 - refactor css code

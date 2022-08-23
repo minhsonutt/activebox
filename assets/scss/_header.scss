@@ -2,9 +2,8 @@
     position: absolute;
     top: 0;
     left: 50%;
-    transform: translateX(-50%);
     width: 100%;
-
+    transform: translateX(-50%);
     &__logo {
         z-index: 2;
     }
@@ -18,9 +17,8 @@
 
     &--fixed {
         position: fixed;
-        background-color: $black-dark-color;
         z-index: 3;
-
+        background-color: $black-dark-color;
         .header__inner {
             padding: 2.5rem 0;
             border-bottom: 0;

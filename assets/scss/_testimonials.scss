@@ -26,8 +26,8 @@
     }
 
     &__img {
-        height: 100%;
         width: 100%;
+        height: 100%;
         object-fit: cover;
     }
 
@@ -41,24 +41,21 @@
             width: 100%;
         }
 
-
         @include mobile() {
-            padding: 2rem;
             height: auto;
+            padding: 2rem;
         }
     }
 
     &__txt {
         font-family: $third-font;
-        color: $white-color;
         font-size: 3.6rem;
+        color: $white-color;
         line-height: 4.2rem;
-
+        font-style: italic;
         @include mobile() {
             font-size: 2.5rem;
         }
-
-        font-style: italic;
     }
 
     &__info {
@@ -78,15 +75,14 @@
         &-pagination {
             bottom: 127px;
             left: 270px;
-
         }
 
         &-pagination-bullet {
-            border-radius: 1rem;
-            background: $white-color;
-            transition: width .25s ease-in-out;
             width: 12px;
             height: 12px;
+            background: $white-color;
+            border-radius: 1rem;
+            transition: width .25s ease-in-out;
         }
     }
 

@@ -11,8 +11,8 @@
         transition: top .5s ease, opacity .5s ease;
 
         &.is-active {
-            opacity: 1;
             top: 0;
+            opacity: 1;
         }
 
         @include tablet() {
@@ -58,12 +58,12 @@
     }
 
     &__socials-item {
-        position: relative;
         display: flex;
         align-items: center;
         justify-content: center;
-        height: 4rem;
+        position: relative;
         width: 4rem;
+        height: 4rem;
         margin-right: 5px;
         border: 1px solid $border-color-2;
         cursor: pointer;
@@ -78,9 +78,9 @@
             content: '';
             position: absolute;
             z-index: 1;
-            background: transparent;
             width: 0%;
             height: 0%;
+            background: transparent;
             opacity: 0;
             transition: width 0.2s 0.15s linear, height 0.15s linear, opacity 0s 0.35s;
         }
@@ -90,10 +90,11 @@
             position: absolute;
             top: 0;
             right: 0;
+            z-index: 1;
             border-top: 2px solid $primary-color;
             border-left: 2px solid $primary-color;
             background: transparent;
-            z-index: 1;
+
         }
 
         &::after {
@@ -101,8 +102,8 @@
             position: absolute;
             bottom: 0;
             left: 0;
-            background: transparent;
             z-index: 1;
+            background: transparent;
             border-bottom: 2px solid $primary-color;
             border-right: 2px solid $primary-color;
         }
@@ -116,35 +117,6 @@
         }
     }
 
-    &__socials-icon {
-        background: url(../images/icon/sp_icon.png) no-repeat;
-        width: 2rem;
-        height: 2rem;
-        padding: 1rem;
-        display: inline-block;
-
-        &::before,
-        &::after {
-            content: "";
-            width: 2px;
-            height: 0;
-            position: absolute;
-            transition: all 0.2s linear;
-            background: #fff;
-        }
-
-        &--facebook {
-            background-position: 7px -127px;
-        }
-
-        &--twitter {
-            background-position: -64px -125px;
-        }
-
-        &--linkedin {
-            background-position: -22px -126px;
-        }
-    }
 
     .swiper {
         &-wrapper {
@@ -153,9 +125,9 @@
 
         &-pagination-bullet {
             width: 11px;
-            border-radius: 1rem;
-            background: $primary-color;
             height: 11px;
+            background: $primary-color;
+            border-radius: 1rem;
             transition: width .3s ease;
             &-active {
                 width: 2.5rem;

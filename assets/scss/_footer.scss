@@ -49,38 +49,6 @@
         border: 2px solid $white-color;
         border-radius: 3px;
         cursor: pointer;
-
-    }
-
-    &__socials-icon {
-        display: inline-block;
-        background: url(../images/icon/sp_icon.png) no-repeat;
-        background-position: 20px 20px;
-        width: 8px;
-        height: 18px;
-    }
-
-    &__socials-icon--facebook {
-        background-position: -12px -128px
-    }
-
-    &__socials-icon--twitter {
-        width: 20px;
-        height: 14px;
-        background-position: -88px -128px;
-    }
-
-    &__socials-icon--linkedin {
-        width: 16px;
-        height: 16px;
-        background-position: -44px -128px;
-    }
-
-    &__copyright {
-        @include flex(center, center);
-        line-height: 2.2rem;
-        padding: 3rem 0;
-        background-color: $blue-dark-color;
     }
 
     &__copyright-txt {
