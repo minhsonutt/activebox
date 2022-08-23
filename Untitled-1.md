@@ -9,9 +9,9 @@ feed back:
 - active -> is-active -> done
 - z-index -> done
 - đổi tên hình ảnh -> done
-
+- bỏ ký tự đặt biệt copyright -> done
 
 
 - đặt class chung cho icon
-- bỏ ký tự đặt biệt copyright
-- refactor css code, change name images
+
+- refactor css code
