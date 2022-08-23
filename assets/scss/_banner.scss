@@ -14,7 +14,7 @@
         color: $white-color;
         text-transform: uppercase;
     
-        @include pc() {
+        @include desktop() {
             font-size: 4rem;
             line-height: 1;
         }
@@ -35,7 +35,7 @@
     &__txt {
         width: 80%;
         margin: 9rem auto 0;
-        @include pc() {
+        @include desktop() {
             margin-top: 4rem;
         }
 
@@ -71,7 +71,7 @@
 
     &__title,
     &__subtitle,
-    .js-banner-btn {
+    &__btn {
         transition: opacity .5s ease, transform .5s ease;
         @include tablet {
             &.is-hidden {
@@ -81,7 +81,7 @@
         }
 
     }
-    .js-banner-btn {
+    &__btn {
         opacity: 0;
         transform: translateY(50px);
         &.is-active {

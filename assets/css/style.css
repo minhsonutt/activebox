@@ -266,22 +266,20 @@ button:focus {
     line-height: 1.5;
   }
 }
-.banner__title, .banner__subtitle,
-.banner .js-banner-btn {
+.banner__title, .banner__subtitle, .banner__btn {
   transition: opacity 0.5s ease, transform 0.5s ease;
 }
 @media screen and (max-width: 1024px) {
-  .banner__title.is-hidden, .banner__subtitle.is-hidden,
-.banner .js-banner-btn.is-hidden {
+  .banner__title.is-hidden, .banner__subtitle.is-hidden, .banner__btn.is-hidden {
     position: relative;
     z-index: -1;
   }
 }
-.banner .js-banner-btn {
+.banner__btn {
   opacity: 0;
   transform: translateY(50px);
 }
-.banner .js-banner-btn.is-active {
+.banner__btn.is-active {
   opacity: 1;
   transform: translateY(0);
 }
@@ -484,8 +482,8 @@ button:focus {
   margin: 3.3rem 0 2.6rem;
   font-family: "Raleway-Bold", sans-serif;
   font-size: 1.4rem;
-  color: #2d3033;
   font-weight: 700;
+  color: #2d3033;
   text-overflow: ellipsis;
   text-transform: uppercase;
   -webkit-box-orient: vertical;
@@ -815,12 +813,12 @@ button:focus {
   opacity: 1;
   transform: translateY(0);
 }
-.download .js-download-btn {
+.download__btn {
   opacity: 0;
   transform: translateY(50px);
   transition: opacity 0.4s ease, transform 0.4s ease;
 }
-.download .js-download-btn.is-active {
+.download__btn.is-active {
   opacity: 1;
   transform: translateY(0);
 }

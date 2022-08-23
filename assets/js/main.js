@@ -19,13 +19,13 @@
     const links = document.querySelectorAll('.gnb__link');
     const bannerTitle = document.querySelector('.banner__title');
     const bannerSubtitle = document.querySelector('.banner__subtitle span');
-    const bannerBtn = document.querySelector('.js-banner-btn')
+    const bannerBtn = document.querySelector('.banner__btn')
     const menuBtn = document.querySelector('.toggle-menu');
     const featureItems = document.querySelectorAll('.features__item');
     const ourTeams = document.querySelectorAll('.ourteam__item');
     const testimonials = document.querySelector('.testimonials');
-    const bannerText = ['banner__title', 'banner__subtitle', 'js-banner-btn'];
-    const downloadContent = ['download__title', 'download__subtitle', 'js-download-btn'];
+    const bannerText = ['banner__title', 'banner__subtitle', 'banner__btn'];
+    const downloadContent = ['download__title', 'download__subtitle', 'download__btn'];
     const backToTopBtn = document.querySelector('.backtotop');
     const screenPosition = window.innerHeight;
 

@@ -6,12 +6,11 @@
     justify-content: $justifyContent;
 }
 
-@mixin pc {
-    @media screen and (max-width: $pc-width) {
+@mixin desktop {
+    @media screen and (max-width: $desktop-width) {
         @content()
     }
 }
-
 
 @mixin tablet {
     @media screen and (max-width: $tablet-width) {
