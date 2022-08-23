@@ -55,11 +55,11 @@ button:focus {
 
 .blind {
     position: absolute;
+    overflow: hidden;
     width: 1px;
     height: 1px;
     clip: rect(1px, 1px, 1px, 1px);
     white-space: nowrap;
-    overflow: hidden;
 }
 
 .text-center {
@@ -67,18 +67,41 @@ button:focus {
 }
 
 .btn {
+    position: relative;
+    overflow: hidden;
     width: 200px;
     height: 46px;
     padding-left: 7px;
     border-radius: 2px;
     font-size: 1.3rem;
     font-weight: 400;
-    text-transform: uppercase;
     color: $white-color;
+    text-transform: uppercase;
     line-height: 46px;
     cursor: pointer;
-    &--primary  {
+
+    &--primary {
         background-color: $primary-color;
+    }
+
+    &:after {
+        content: "";
+        position: absolute;
+        top: -50px;
+        left: -75px;
+        z-index: -10;
+        width: 50px;
+        height: 155px;
+        background: $white-color;
+        opacity: .2;
+        transform: rotate(35deg);
+        transition: left .75s cubic-bezier(0.19, 1, 0.22, 1);
+    }
+
+    &:hover {
+        &:after {
+            left: 120%;
+        }
     }
 }
 
@@ -86,6 +109,43 @@ button:focus {
     background-image: url(../images/icon/sp_icon.png);
     background-size: 232px 146px;
     background-repeat: no-repeat;
+    height: 61px;
+
+    &--penceil {
+        width: 60px;
+        background-position: -45px -63px;
+    }
+
+    &--react {
+        width: 56px;
+        background-position: -109px -63px;
+    }
+
+    &--light {
+        width: 41px;
+        background-position: 0 -63px;
+    }
+
+    &--react {
+        width: 56px;
+        background-position: -109px -63px;
+    }
+
+    &--screen {
+        width: 73px;
+        background-position: -159px 1px;
+    }
+
+    &--bag {
+        width: 72px;
+        background-position: -83px 1px;
+    }
+
+    &--download {
+        width: 79px;
+        background-position: 0px 1px;
+    }
+
     &--facebook,
     &--facebook-gray {
         width: 8px;
@@ -119,48 +179,5 @@ button:focus {
         background-position: -24px -128px;
     }
 
-    &--penceil,
-    &--react,
-    &--light,
-    &--react,
-    &--screen,
-    &--bag,
-    &--download {
-        width: 60px;
-        height: 61px;
-    }
-
-    &--penceil {
-        background-position: -45px -63px;
-    }
-
-    &--react {
-        width: 56px;
-        background-position: -109px -63px;
-    }
-
-    &--light {
-        width: 41px;
-        background-position: 0 -63px;
-    }
-
-    &--react {
-        width: 56px;
-        background-position: -109px -63px;
-    }
-
-    &--screen {
-        width: 73px;
-        background-position: -159px 1px;
-    }
-
-    &--bag {
-        width: 72px;
-        background-position: -83px 1px;
-    }
-
-    &--download {
-        width: 79px;
-        background-position: 0px 1px;
-    }
+   
 }
