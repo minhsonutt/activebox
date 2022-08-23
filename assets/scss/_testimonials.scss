@@ -2,10 +2,12 @@
     opacity: 0;
     transform: translateY(100px);
     transition: opacity .5s ease, transform .5s ease;
-    &.active {
+
+    &.is-active {
         opacity: 1;
         transform: translateY(0)
     }
+
     &__inner {
         @include flex (center, center);
     }
@@ -31,14 +33,14 @@
 
     &__content {
         width: 50%;
+        height: 500px;
+        padding: 10rem 10rem 0 10rem;
+        background-color: $violet-color;
 
         @include tablet() {
             width: 100%;
         }
 
-        background-color: $violet-color;
-        padding: 10rem 10rem 0 10rem;
-        height: 500px;
 
         @include mobile() {
             padding: 2rem;
@@ -61,11 +63,11 @@
 
     &__info {
         display: inline-block;
-        font-size: 1.3rem;
-        text-transform: uppercase;
-        color: $white-color;
-        font-weight: 700;
         margin-top: 3rem;
+        font-size: 1.3rem;
+        font-weight: 700;
+        color: $white-color;
+        text-transform: uppercase;
 
         @include mobile() {
             font-size: 1rem;
@@ -73,16 +75,18 @@
     }
 
     .swiper {
-        .swiper-pagination {
+        &-pagination {
             bottom: 127px;
             left: 270px;
-            .swiper-pagination-bullet {
-                border-radius: 1rem;
-                background: $white-color;
-                transition: width .25s ease-in-out;
-                width: 12px;
-                height: 12px;
-            }
+
+        }
+
+        &-pagination-bullet {
+            border-radius: 1rem;
+            background: $white-color;
+            transition: width .25s ease-in-out;
+            width: 12px;
+            height: 12px;
         }
     }
 

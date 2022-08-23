@@ -1,7 +1,7 @@
     .gnb {
         @include tablet() {
-           
-            &.active {
+
+            &.is-active {
                 .gnb__list {
                     opacity: 1;
                     visibility: visible;
@@ -19,7 +19,7 @@
                 height: 100vh;
                 background-color: $black-dark-color;
                 flex-direction: column;
-                z-index: 98;
+                z-index: 1;
                 transition: all .4s ease;
                 opacity: 0;
                 visibility: hidden;
@@ -39,7 +39,7 @@
                 opacity: 0;
                 position: relative;
                 top: 50px;
-                &.active {
+                &.is-active {
                     top: 0;
                     opacity: 1;
                 }
@@ -64,7 +64,7 @@
                 color: $white-color;
             }
 
-            &.active {
+            &.is-active {
                 color: $primary-color;
             }
         }

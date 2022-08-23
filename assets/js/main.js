@@ -17,16 +17,16 @@
     const navigation = document.querySelector('.gnb')
     const gnbItems = document.querySelectorAll('.gnb__item');
     const links = document.querySelectorAll('.gnb__link');
-    const backToTopBtn = document.querySelector('.backtotop');
+    const bannerTitle = document.querySelector('.banner__title');
+    const bannerSubtitle = document.querySelector('.banner__subtitle span');
+    const bannerBtn = document.querySelector('.js-banner-btn')
     const menuBtn = document.querySelector('.toggle-menu');
     const featureItems = document.querySelectorAll('.features__item');
     const ourTeams = document.querySelectorAll('.ourteam__item');
-    const bannerTitle = document.querySelector('.banner__title');
-    const bannerSubtitle = document.querySelector('.banner__subtitle');
-    const bannerBtn = document.querySelector('.js-banner-btn')
     const testimonials = document.querySelector('.testimonials');
     const bannerText = ['banner__title', 'banner__subtitle', 'js-banner-btn'];
     const downloadContent = ['download__title', 'download__subtitle', 'js-download-btn'];
+    const backToTopBtn = document.querySelector('.backtotop');
     const screenPosition = window.innerHeight;
 
     const fixedNavigation = {
@@ -53,11 +53,11 @@
         },
         scrollTrigger() {
             if (bannerSubtitle) {
-                bannerSubtitle.classList.add('active')
+                bannerSubtitle.classList.add('is-active')
                 bannerSubtitle.style.transitionDelay = '.3s';
             }
             if (bannerBtn) {
-                bannerBtn.classList.add('active')
+                bannerBtn.classList.add('is-active')
                 bannerBtn.style.transitionDelay = '.4s';
             }
             window.addEventListener('scroll', this.handleScrollTrigger);
@@ -65,33 +65,33 @@
         handleScrollTrigger() {
             if (galleryItems) {
                 galleryItems.forEach(image => {
-                    let galleryPositon = image.getBoundingClientRect().top;
+                    const galleryPositon = image.getBoundingClientRect().top;
                     if (galleryPositon < screenPosition) {
-                        image.classList.add('active');
+                        image.classList.add('is-active');
                     }
                 });
             }
 
             if (featureItems) {
                 featureItems.forEach((feature, idx) => {
-                    let featurePositon = feature.getBoundingClientRect().top
+                    const featurePositon = feature.getBoundingClientRect().top
                     if (idx > 0) {
                         feature.style.transitionDelay = `${(idx / 10) * 1.2}s`;
                     }
                     if (featurePositon < screenPosition) {
-                        feature.classList.add('active');
+                        feature.classList.add('is-active');
                     }
                 })
             }
 
             if (ourTeams) {
                 ourTeams.forEach((member, idx) => {
-                    let ourTeamPositon = member.getBoundingClientRect().top;
+                    const ourTeamPositon = member.getBoundingClientRect().top;
                     if (idx > 0) {
                         member.style.transitionDelay = `${(idx / 10) * 1.2}s`;
                     }
                     if (ourTeamPositon < screenPosition) {
-                        member.classList.add('active');
+                        member.classList.add('is-active');
                     }
                 })
             }
@@ -100,7 +100,7 @@
                 const testimonialsPosition = testimonials.getBoundingClientRect().top;
                 if(testimonialsPosition < screenPosition) {
                     testimonials.style.transitionDelay = '.2s';
-                    testimonials.classList.add('active');
+                    testimonials.classList.add('is-active');
                 }
             }
 
@@ -110,7 +110,7 @@
                     const elementPositon = element.getBoundingClientRect().top;
                     if (elementPositon < screenPosition) {
                         element.style.transitionDelay = `.${idx + 1}s`;
-                        element.classList.add('active');
+                        element.classList.add('is-active');
                     }
                 })
             }
@@ -192,7 +192,7 @@
                         const headerHeight = header.offsetHeight;
                         const sectionPosition = section.offsetTop - headerHeight;
                         window.scrollTo({
-                            top: sectionPosition - headerHeight + 50,
+                            top: sectionPosition - headerHeight,
                             behavior: "smooth"
                         });
                     }
@@ -213,19 +213,18 @@
                     const currentSection = document.querySelector(`#${section}`);
 
                     currentSectionPosition = currentSection.getBoundingClientRect().top;
-
                     const linkActive = document.querySelector(`[data-link=${section}]`);
                     if (currentSection) {
                         if (currentSectionPosition < screenPosition - 600) {
                             links.forEach(link => {
-                                link.classList.remove('active');
+                                link.classList.remove('is-active');
                             })
-                            linkActive.classList.add('active');
+                            linkActive.classList.add('is-active');
                         }
                     }
                     if (window.pageYOffset === 0) {
                         links.forEach(link => {
-                            link.classList.remove('active');
+                            link.classList.remove('is-active');
                         })
                     }
                 })
@@ -244,38 +243,53 @@
         },
         handleClickToggleMenu() {
             gnbItems.forEach((item, idx) => {
-                item.classList.remove('active');
+                item.classList.remove('is-active');
                 if (idx > 0) {
                     item.style.transitionDelay = '0s';
                 }
             })
-            if (navigation.classList.contains('active')) {
-                navigation.classList.remove('active');
+            if (navigation.classList.contains('is-active')) {
+                navigation.classList.remove('is-active');
                 document.body.style.overflowY = 'auto';
             }
             else {
                 gnbItems.forEach((item, idx) => {
-                    item.classList.add('active');
+                    item.classList.add('is-active');
                     if (idx > 0) {
                         item.style.transitionDelay = `${idx / 10}s`;
                     }
                     item.addEventListener('click', () => {
-                        navigation.classList.remove('active');
-                        menuBtn.classList.remove('active');
+                        navigation.classList.remove('is-active');
+                        menuBtn.classList.remove('is-active');
                         document.body.style.overflowY = 'auto';
+                        if (navigation.classList.contains('is-active')) {
+                            console.log('if');
+                            bannerText.forEach(item => {
+                                const element = document.querySelector(`.${item}`);
+                                element.classList.add('hidden');
+                            })
+                        } else {
+                            console.log('else');
+                            bannerText.forEach(item => {
+                                const element = document.querySelector(`.${item}`);
+                                element.classList.remove('hidden');
+                            })
+                        }
                     })
+
+
                 })
-                navigation.classList.add('active')
+                navigation.classList.add('is-active')
                 document.body.style.overflowY = 'hidden';
             }
 
-            if (menuBtn.classList.contains('active')) {
-                menuBtn.classList.remove('active');
+            if (menuBtn.classList.contains('is-active')) {
+                menuBtn.classList.remove('is-active');
             } else {
-                menuBtn.classList.add('active');
+                menuBtn.classList.add('is-active');
             }
 
-            if (navigation.classList.contains('active')) {
+            if (navigation.classList.contains('is-active')) {
                 bannerText.forEach(item => {
                     const element = document.querySelector(`.${item}`);
                     element.classList.add('hidden');
@@ -331,9 +345,9 @@
         handleScrollDisplayBackToTop() {
             if (backToTop) {
                 if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
-                    backToTopBtn.classList.add('active');
+                    backToTopBtn.classList.add('is-active');
                 } else {
-                    backToTopBtn.classList.remove('active');
+                    backToTopBtn.classList.remove('is-active');
                 }
             }
         }

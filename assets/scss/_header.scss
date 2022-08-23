@@ -6,8 +6,7 @@
     width: 100%;
 
     &__logo {
-        position: relative;
-        z-index: 99;
+        z-index: 2;
     }
 
     &__inner {
@@ -20,7 +19,7 @@
     &--fixed {
         position: fixed;
         background-color: $black-dark-color;
-        z-index: 99;
+        z-index: 3;
 
         .header__inner {
             padding: 2.5rem 0;
