@@ -53,6 +53,7 @@
         color: $white-color;
         line-height: 4.2rem;
         font-style: italic;
+
         @include mobile() {
             font-size: 2.5rem;
         }
@@ -75,14 +76,14 @@
         &-pagination {
             bottom: 127px;
             left: 270px;
-        }
 
-        &-pagination-bullet {
-            width: 12px;
-            height: 12px;
-            background: $white-color;
-            border-radius: 1rem;
-            transition: width .25s ease-in-out;
+            &-bullet {
+                width: 12px;
+                height: 12px;
+                background: $white-color;
+                border-radius: 1rem;
+                transition: width .25s ease-in-out;
+            }
         }
     }
 

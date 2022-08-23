@@ -30,8 +30,7 @@
             &:not(:last-child) {
                 margin-right: 5.9rem;
                 @include tablet() {
-                    margin-right: 0;
-                    margin-bottom: 4rem;
+                    margin: 0 0 4rem 0;
                 }
             }
             @include tablet() {

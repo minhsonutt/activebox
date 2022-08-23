@@ -82,6 +82,7 @@ button:focus {
 .icon {
     display: inline-block;
     background-image: url(../images/icon/sp_icon.png);
+    background-size: 300px 300px;
     background-repeat: no-repeat;
     &--facebook,
     &--facebook-gray {

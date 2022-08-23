@@ -1,7 +1,8 @@
-@import url(https://fonts.googleapis.com/css?family=Raleway:300,400,500,600,700);
-@import url(https://fonts.googleapis.com/css?family=Cardo:400,400italic,700);
-@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Cardo:ital,wght@0,400;0,700;1,400&family=Open+Sans:wght@400;500;600;700&display=swap");
+@font-face {
+  font-family: Raleway;
+  font-weight: 400;
+  src: url(../fonts/Raleway-Regular.ttf);
+}
 *,
 ::before,
 ::after {
@@ -84,6 +85,7 @@ button:focus {
 .icon {
   display: inline-block;
   background-image: url(../images/icon/sp_icon.png);
+  background-size: 300px 300px;
   background-repeat: no-repeat;
 }
 .icon--facebook, .icon--facebook-gray {
@@ -203,8 +205,7 @@ button:focus {
 }
 .banner__txt {
   width: 80%;
-  margin: 0 auto;
-  margin-top: 9rem;
+  margin: 9rem auto 0;
 }
 @media screen and (max-width: 1200px) {
   .banner__txt {
@@ -217,9 +218,9 @@ button:focus {
   }
 }
 .banner__subtitle {
+  overflow: hidden;
   width: 98%;
   margin: 2.4rem auto 7.3rem;
-  overflow: hidden;
   font-family: "Raleway", sans-serif;
   font-size: 2.2rem;
   font-weight: 400;
@@ -325,8 +326,7 @@ button:focus {
 }
 @media screen and (max-width: 1024px) {
   .gnb__item:not(:last-child) {
-    margin-right: 0;
-    margin-bottom: 4rem;
+    margin: 0 0 4rem 0;
   }
 }
 @media screen and (max-width: 1024px) {
@@ -458,15 +458,15 @@ button:focus {
 }
 .features__title {
   display: -webkit-box;
-  -webkit-box-orient: vertical;
-  -webkit-line-clamp: 1;
-  margin: 3.3rem 0 2.6rem;
   overflow: hidden;
+  margin: 3.3rem 0 2.6rem;
   font-size: 1.4rem;
   color: #2d3033;
+  font-weight: 700;
   text-overflow: ellipsis;
   text-transform: uppercase;
-  font-weight: 700;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
 }
 .features__desc {
   font-size: 1.4rem;

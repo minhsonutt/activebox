@@ -34,15 +34,15 @@
 
     &__title {
         display: -webkit-box;
-        -webkit-box-orient: vertical;
-        -webkit-line-clamp: 1;
-        margin: 3.3rem 0 2.6rem;
         overflow: hidden;
+        margin: 3.3rem 0 2.6rem;
         font-size: 1.4rem;
         color: $black-color;
+        font-weight: 700;
         text-overflow: ellipsis;
         text-transform: uppercase;
-        font-weight: 700;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 1;
     }
 
     &__desc {

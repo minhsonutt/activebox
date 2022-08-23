@@ -13,4 +13,10 @@ feed back:
 - đặt class chung cho icon -> done
 - đặt lại tên color
 
-- refactor css code
+
+
+
+-order property css
+-favicon
+-dulicate css code
+-refactor css code

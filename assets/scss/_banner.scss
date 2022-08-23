@@ -35,8 +35,7 @@
 
     &__txt {
         width: 80%;
-        margin: 0 auto;
-        margin-top: 9rem;
+        margin: 9rem auto 0;
         @include pc() {
             margin-top: 4rem;
         }
@@ -47,9 +46,9 @@
     }
 
     &__subtitle {
+        overflow: hidden;
         width: 98%;
         margin: 2.4rem auto 7.3rem;
-        overflow: hidden;
         font-family: $primary-font;
         font-size: 2.2rem;
         font-weight: 400;
