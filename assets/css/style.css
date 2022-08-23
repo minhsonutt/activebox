@@ -564,6 +564,7 @@ button:focus {
   color: #2d3033;
 }
 .ourteam__position {
+  display: inline-block;
   margin-bottom: 2.2rem;
   font-size: 1.3rem;
   font-weight: 400;
