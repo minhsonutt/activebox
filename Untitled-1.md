@@ -12,10 +12,8 @@ feed back:
 - bỏ ký tự đặt biệt copyright -> done
 - đặt class chung cho icon -> done
 - order property css -> done
-
-- dulicate css code -> done
+- duplicate css code fix -> done
 - refactor css code-> done
-
 
 - favicon
 - đặt lại tên color

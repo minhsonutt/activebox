@@ -24,7 +24,6 @@
     const featureItems = document.querySelectorAll('.features__item');
     const ourTeams = document.querySelectorAll('.ourteam__item');
     const testimonials = document.querySelector('.testimonials');
-    const bannerText = ['banner__title', 'banner__subtitle', 'banner__btn'];
     const downloadContent = ['download__title', 'download__subtitle', 'download__btn'];
     const backToTopBtn = document.querySelector('.backtotop');
     const screenPosition = window.innerHeight;
@@ -262,43 +261,16 @@
                         navigation.classList.remove('is-active');
                         menuBtn.classList.remove('is-active');
                         document.body.style.overflowY = 'auto';
-                        if (navigation.classList.contains('is-active')) {
-                            console.log('if');
-                            bannerText.forEach(item => {
-                                const element = document.querySelector(`.${item}`);
-                                element.classList.add('is-hidden');
-                            })
-                        } else {
-                            console.log('else');
-                            bannerText.forEach(item => {
-                                const element = document.querySelector(`.${item}`);
-                                element.classList.remove('is-hidden');
-                            })
-                        }
                     })
-
-
                 })
                 navigation.classList.add('is-active')
-                document.body.style.overflowY = 'is-hidden';
+                document.body.style.overflowY = 'hidden';
             }
 
             if (menuBtn.classList.contains('is-active')) {
                 menuBtn.classList.remove('is-active');
             } else {
                 menuBtn.classList.add('is-active');
-            }
-
-            if (navigation.classList.contains('is-active')) {
-                bannerText.forEach(item => {
-                    const element = document.querySelector(`.${item}`);
-                    element.classList.add('is-hidden');
-                })
-            } else {
-                bannerText.forEach(item => {
-                    const element = document.querySelector(`.${item}`);
-                    element.classList.remove('is-hidden');
-                })
             }
         }
     }

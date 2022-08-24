@@ -13,7 +13,7 @@
         line-height: 6rem;
         color: $white-color;
         text-transform: uppercase;
-    
+
         @include desktop() {
             font-size: 4rem;
             line-height: 1;
@@ -69,18 +69,6 @@
         }
     }
 
-    &__title,
-    &__subtitle,
-    &__btn {
-        transition: opacity .5s ease, transform .5s ease;
-        @include tablet {
-            &.is-hidden {
-                position: relative;
-                z-index: -1;
-            }
-        }
-
-    }
     &__btn {
         opacity: 0;
         transform: translateY(50px);

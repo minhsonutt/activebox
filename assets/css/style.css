@@ -272,15 +272,6 @@ button:focus {
     line-height: 1.5;
   }
 }
-.banner__title, .banner__subtitle, .banner__btn {
-  transition: opacity 0.5s ease, transform 0.5s ease;
-}
-@media screen and (max-width: 1024px) {
-  .banner__title.is-hidden, .banner__subtitle.is-hidden, .banner__btn.is-hidden {
-    position: relative;
-    z-index: -1;
-  }
-}
 .banner__btn {
   opacity: 0;
   transform: translateY(50px);
@@ -294,6 +285,7 @@ button:focus {
   position: absolute;
   top: 0;
   left: 50%;
+  z-index: 2;
   width: 100%;
   transform: translateX(-50%);
 }
