@@ -3,7 +3,7 @@
 
     &__inner {
         @include flex(center, space-between);
-        padding: 7.5rem 0 11.5rem;
+        padding: 7.5rem 0;
 
         @include tablet() {
             padding: 5rem 0 5rem;
@@ -54,8 +54,14 @@
         }
     }
 
+    &__copyright {
+        padding: 2.9rem 0;
+        background: $black-dark-color;
+    }
+
     &__copyright-txt {
         font-size: 1.4rem;
+        line-height: 2.2rem;
         color: $grey-text-color;
     }
 

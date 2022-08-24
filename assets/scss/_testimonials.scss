@@ -85,6 +85,12 @@
                 transition: width .25s ease-in-out;
             }
         }
+
+        @include desktop {
+            &-pagination {
+                 bottom: 100px;
+             }
+         }
     }
 
 }
