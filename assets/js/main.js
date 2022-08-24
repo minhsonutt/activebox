@@ -24,6 +24,7 @@
     const featureItems = document.querySelectorAll('.features__item');
     const ourTeams = document.querySelectorAll('.ourteam__item');
     const testimonials = document.querySelector('.testimonials');
+    const bannerText = ['banner__title', 'banner__subtitle', 'banner__btn'];
     const downloadContent = ['download__title', 'download__subtitle', 'download__btn'];
     const backToTopBtn = document.querySelector('.backtotop');
     const screenPosition = window.innerHeight;
@@ -95,9 +96,9 @@
                 })
             }
 
-            if(testimonials) {
+            if (testimonials) {
                 const testimonialsPosition = testimonials.getBoundingClientRect().top;
-                if(testimonialsPosition < screenPosition) {
+                if (testimonialsPosition < screenPosition) {
                     testimonials.style.transitionDelay = '.2s';
                     testimonials.classList.add('is-active');
                 }
@@ -200,7 +201,6 @@
         },
     }
 
-
     const activeMenuLink = {
         init() {
             this.activeMenuLink();
@@ -285,12 +285,12 @@
             bannerTitle.textContent = '';
             const textList = bannerText.split(' ');
             const textLength = textList.length;
-            for(let i = 0; i < textLength; i++) {
-                if(textList[i] === '') {
+            for (let i = 0; i < textLength; i++) {
+                if (textList[i] === '') {
                     wordList.push(text[i]);
-                }else if(i === 3) {
+                } else if (i === 3) {
                     wordList.push(`<span class="banner__text-wrap"><span class="banner__title-txt" style="animation-delay:${(i * 0.1)}s">${textList[i]}</span></br></span>`);
-                }else {
+                } else {
                     wordList.push(`<span class="banner__text-wrap"><span class="banner__title-txt" style="animation-delay:${(i * 0.1)}s">${textList[i]}</span></span>`);
                 }
             }

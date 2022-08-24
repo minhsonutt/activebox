@@ -282,7 +282,7 @@ button:focus {
 }
 
 .header {
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 50%;
   z-index: 2;
@@ -303,8 +303,6 @@ button:focus {
   transition: padding 0.3s;
 }
 .header--fixed {
-  position: fixed;
-  z-index: 3;
   background-color: #2a2d48;
 }
 .header--fixed .header__inner {
