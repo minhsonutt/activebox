@@ -275,6 +275,7 @@ button:focus {
 .banner__btn {
   opacity: 0;
   transform: translateY(50px);
+  transition: transform 0.3s, opacity 0.3s;
 }
 .banner__btn.is-active {
   opacity: 1;

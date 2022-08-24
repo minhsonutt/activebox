@@ -24,8 +24,7 @@
     const featureItems = document.querySelectorAll('.features__item');
     const ourTeams = document.querySelectorAll('.ourteam__item');
     const testimonials = document.querySelector('.testimonials');
-    const bannerText = ['banner__title', 'banner__subtitle', 'banner__btn'];
-    const downloadContent = ['download__title', 'download__subtitle', 'download__btn'];
+    const downloadElements = ['download__title', 'download__subtitle', 'download__btn'];
     const backToTopBtn = document.querySelector('.backtotop');
     const screenPosition = window.innerHeight;
 
@@ -60,6 +59,7 @@
                 bannerBtn.classList.add('is-active')
                 bannerBtn.style.transitionDelay = '.4s';
             }
+
             window.addEventListener('scroll', this.handleScrollTrigger);
         },
         handleScrollTrigger() {
@@ -104,8 +104,8 @@
                 }
             }
 
-            if (downloadContent) {
-                downloadContent.forEach((item, idx) => {
+            if (downloadElements) {
+                downloadElements.forEach((item, idx) => {
                     const element = document.querySelector(`.${item}`);
                     const elementPositon = element.getBoundingClientRect().top;
                     if (elementPositon < screenPosition) {
